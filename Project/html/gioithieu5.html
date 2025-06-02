@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="../css/sunhouse.css">
+     <style>
+    .text-orange {
+        color:  #0d7182;
+    }
+    
+    .border-orange {
+        border-color:  #0d7182 !important;
+    }
+    
+    .bg-orange {
+        background-color:  red;
+    }
+    
+    .badge {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .badge {
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+        }
+    }
+       .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        .card {
+            height: 400px; /* Chiều cao cố định cho toàn bộ card */
+            display: flex;
+            flex-direction: column;
+        }
+        .card-body {
+            flex-grow: 1;
+            overflow: hidden; /* Ẩn nội dung vượt quá */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .card-text {
+            margin-bottom: 0; /* Loại bỏ margin mặc định */
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</style>
+</head>
+<body>
+ <!-- Header -->
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                    <div class="dropdown">
+                       <a href="home.html"><img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-01 145852.png" alt="Sunhouse Logo"></a>
+                    </div>
+                     <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="#">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="#">Điện tử Điện lạnh</a>
+                                    <a href="#">Thiết bị nhà bếp</a>
+                                    <a href="#">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>
+                    <div class="logo">SUNHOUSE</div>
+                </nav>
+            </div>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+                
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container py-5">
+    <!-- Tiêu đề và ngày tháng -->
+    <div class="mb-4">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Trang chủ</li>
+                <li class="breadcrumb-item active" aria-current="page">Thư viện video </li>
+            </ol>
+        </nav>
+    
+    </div>
+    </div>
+      <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 155519.png" style="width: 1530px;">
+      
+   <div class="container my-5">
+        <h1 class="text-center mb-4" style="color: #0d7182;">SUNHOUSE Sống Hiện Đại</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Row 1 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 160849.png" class="card-img-top" alt="Tiết kiệm điện">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Nhưng tiêu chí lựa chọn điều hòa tiết kiệm điện tốt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 160904.png" class="card-img-top" alt="Tiêu chí chọn điều hòa">
+                    <div class="card-body">
+                       
+                        <p class="card-text">Nhưng tiêu chí lựa chọn điều hòa: ngoài công suất có những yếu tố gì?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 160921.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Chi tiết về tính năng lọc bụi mịn PM2.5 của điều hòa SUNHOUSE SHR-AW09IC610</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 160934.png" class="card-img-top" alt="Review máy lọc nước">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Trên tay máy lọc nước RO 9 lõi SUNHOUSE SHA8817KP</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 160940.png" class="card-img-top" alt="Điều hòa gia rẻ">
+                    <div class="card-body">
+                      
+                        <p class="card-text">Đánh giá điều hòa SUNHOUSE SHR-AW09IC610 Inverter: làm lạnh sâu, tiết kiệm điện</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 160946.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+            
+                        <p class="card-text">Trên tay điều hòa không khí SUNHOUSE SHR-AW09IC610: Thiết kế hiện đại, lọc bụi mịn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <h1 class="text-center mb-4" style="color: #0d7182;">Video chương trình sự kiện</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Row 1 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 161833.png" class="card-img-top" alt="Tiết kiệm điện">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Bước - Khát vọng Chính phục | TVC Version | Sunhouse Group</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 161833.png" class="card-img-top" alt="Tiêu chí chọn điều hòa">
+                    <div class="card-body">
+                       
+                        <p class="card-text">Bước - Khát vọng Chính phục | Story film | Sunhouse Group</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 161843.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+                        
+                        <p class="card-text">R.O nước khỏe - Điều hòa khí chất - SUNHOUSE đồng hành chính phục đình cao</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 161853.png" class="card-img-top" alt="Review máy lọc nước">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Điều hòa khí chất - SUNHOUSE đồng hành chính phục đình cao SEA Games 30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 161902.png" class="card-img-top" alt="Điều hòa gia rẻ">
+                    <div class="card-body">
+                      
+                        <p class="card-text">R.O nước khỏe - SUNHOUSE đồng hành chính phục đình cao SEA Games 30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 161917.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+                        
+                        <p class="card-text">"Bước chuyển thời gian" - Sự kiện ra mắt điều hòa SUNHOUSE đầy ấn tượng!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <h1 class="text-center mb-4" style="color: #0d7182;">Video tập đoàn</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Row 1 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 162832.png" class="card-img-top" alt="Tiết kiệm điện">
+                    <div class="card-body">
+                        
+                        <p class="card-text">SUNHOUSE khai trương ngành điện lạnh cùng sự kiện hoành tráng</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 162838.png" class="card-img-top" alt="Tiêu chí chọn điều hòa">
+                    <div class="card-body">
+                       
+                        <p class="card-text">SUNHOUSE tập trung phát triển công nghệ mới, chuyển dịch mạnh mẽ sang kinh doanh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 162845.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Xây dựng thương hiệu bằng chất lượng | SUNHOUSE | Shark Phú</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 162852.png" class="card-img-top" alt="Review máy lọc nước">
+                    <div class="card-body">
+                       
+                        <p class="card-text">CEO Nguyễn Xuân Phú đầu tư Shark Tank không được vụ nào</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 162858.png" class="card-img-top" alt="Điều hòa gia rẻ">
+                    <div class="card-body">
+                      
+                        <p class="card-text">Shark Phú - Doanh nhân tuổi Hợi chia sẻ trong bản tin tài chính kinh doanh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 162905.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Tết này, đừng về nhà ăn tết... - SUNHOUSE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <h1 class="text-center mb-4" style="color: #0d7182;">Bếp Nhà SUNHOUSE|Món ngon dễ làm</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Row 1 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 163211.png" class="card-img-top" alt="Tiết kiệm điện">
+                    <div class="card-body">
+                        
+                        <p class="card-text">SƯỜN OM NƯỚC DỪA thơm ngọt ngon cơm | Bếp nhà SUNHOUSE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 163216.png" class="card-img-top" alt="Tiêu chí chọn điều hòa">
+                    <div class="card-body">
+                       
+                        <p class="card-text">Ăn sáng nhanh gọn chỉ mất 10 phút với BÁNH MÌ BƠ TỎI | Bếp nhà SUNHOUSE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 163224.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Tự làm PIZZA CHAY tại nhà ngon như ngoài tiệm | Bếp nhà SUNHOUSE</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 163234.png" class="card-img-top" alt="Review máy lọc nước">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Thử làm BÒ BÍT TẾT chuẩn bị Âu tại nhà | Bếp nhà SUNHOUSE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 163241.png" class="card-img-top" alt="Điều hòa gia rẻ">
+                    <div class="card-body">
+                      
+                        <p class="card-text">THỊT NẤU ĐÔNG cho ngày trở gió | Bếp nhà SUNHOUSE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 163252.png" class="card-img-top" alt="Điều hòa Bùi Min PM2.5">
+                    <div class="card-body">
+                        
+                        <p class="card-text">Đổi vị bữa sáng với MỲ Ý SỐT BÒ BĂM đơn giản, dễ làm, cả nhà đều thích | Bếp nhà SUNHOUSE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- Footer -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Cột SẢN PHẨM -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">SẢN PHẨM</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Máy lọc nước</a></li>
+                        <li><a href="#">Đồ gia dụng</a></li>
+                        <li><a href="#">Điện gia dụng</a></li>
+                        <li><a href="#">Thiết bị nhà bếp</a></li>
+                        <li><a href="#">Điện tử Điện lạnh</a></li>
+                        <li><a href="#">Điện dân dụng</a></li>
+                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột VỀ SUNHOUSE -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích giải thưởng</a></li>
+                        <li><a href="#">SUNHOUSE TV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột TIN TỨC & SỰ KIỆN -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                        <li><a href="#">Tin thưởng thức</a></li>
+                        <li><a href="#">Khuyến mại HOT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                        <li><a href="#">Địa điểm bán hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Thông tin liên hệ -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+                    <p>Văn phòng tập đoàn:<br>
+                    024.37396676 / 024.37396666<br>
+                    Tổng đài CSKH: 1800 6680</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+                    <p>Email: info@sunhouse.com.vn<br>
+                    Website: www.sunhouse.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
