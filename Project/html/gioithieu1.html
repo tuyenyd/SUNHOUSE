@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu về Tập đoàn SUNHOUSE</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="../css/sunhouse.css">
+    <style>
+        :root {
+            --sunhouse-orange: #0d7182;
+            --sunhouse-dark: #333;
+            --sunhouse-light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--sunhouse-dark);
+            line-height: 1.7;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--sunhouse-orange) !important;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.75rem 0;
+        }
+        
+        .breadcrumb-item.active {
+            color: black;
+
+        }
+        
+        .page-title {
+            color: var(--sunhouse-orange);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sunhouse-orange);
+        }
+        
+        .date-text {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+      
+        
+        .section-title {
+            color: var(--sunhouse-orange);
+            font-weight: 600;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--sunhouse-orange);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--sunhouse-orange);
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--sunhouse-orange);
+        }
+        
+        .value-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border-top: 3px solid var(--sunhouse-orange);
+        }
+        
+        .value-title {
+            font-weight: 600;
+            color: var(--sunhouse-orange);
+            margin-bottom: 0.75rem;
+        }
+        
+        .goal-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .goal-item:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sunhouse-orange);
+            font-weight: bold;
+        }
+    
+        
+        .distribution-item {
+            margin-bottom: 0.75rem;
+        }
+        
+        .distribution-number {
+            font-weight: 700;
+            color: var(--sunhouse-orange);
+        }
+         .text-orange {
+        color:  #0d7182;
+    }
+    
+    .value-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    
+    .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+    
+    .value-image {
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.5s ease;
+    }
+    
+    .value-card:hover .value-image {
+        transform: scale(1.05);
+    }
+    
+    .card-body {
+        background-color: #fff;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+    
+    .card-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #0d7182;
+    }
+    
+    .card-text p {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1.05rem;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                   <div class="dropdown">
+                       <a href="home.html"><img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-01 145852.png" alt="Sunhouse Logo"></a>
+                    </div>
+                     <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="#">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="gioithieu5.html">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="#">Điện tử Điện lạnh</a>
+                                    <a href="#">Thiết bị nhà bếp</a>
+                                    <a href="#">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>
+                    <div class="logo">SUNHOUSE</div>
+                </nav>
+            </div>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+                
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Trang chủ</li>
+                <li class="breadcrumb-item active" aria-current="page">Nhà là bếp, Bếp là SUNHOUSE</li>
+            </ol>
+        </nav>
+
+        <!-- Page Title -->
+        <h1 class="page-title">Về Tập đoàn SUNHOUSE</h1>
+        <p class="date-text">13/05/2018 - 04:44 PM</p>
+
+        <!-- Introduction Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Công ty Cổ phần Tập đoàn SUNHOUSE tiền thân là Công ty TNHH Phú Thắng được thành lập ngày 22/5/2000. Năm 2004, SUNHOUSE liên doanh với Công ty TNHH SUNHOUSE Hàn Quốc, thành lập Công ty TNHH SUNHOUSE Việt Nam và xây dựng nhà máy liên doanh sản xuất đồ gia dụng, dây chuyền ứng dụng công nghệ Anodized lạnh tiên tiến từ Hàn Quốc tại khu vực ASEAN. Năm 2010, SUNHOUSE chính thức được lấy tên là Công ty Cổ phần Tập đoàn SUNHOUSE, đầu tư vào nhiều lĩnh vực đa dạng (hàng gia dụng, điện gia dụng, thiết bị nhà bếp, thiết bị điện công nghiệp, máy lọc nước, thiết bị chiếu sáng...). Sau 20 năm hình thành và phát triển, Tập đoàn SUNHOUSE đã gia nhập nhóm doanh nghiệp nghìn tỷ với doanh thu tăng trưởng đều đặn bình quân 25-30%. SUNHOUSE hiện sở hữu cụm 8 nhà máy sản xuất trên tổng diện tích 100.000m2 với hơn 2.500 cán bộ công nhân viên.</p>
+                
+                <p>SUNHOUSE không chỉ là cảnh chim đầu đàn của ngành gia dụng Việt Nam mà còn đang vươn tầm quốc tế, khẳng định tên tuổi tại nhiều thị trường khó tính. Với mạng lưới 60.000 điểm bán, sản xuất kinh doanh hơn 500 nhóm sản phẩm gia dụng thiết yếu, sản phẩm SUNHOUSE đã có mặt tại toàn bộ hệ thống siêu thị, trung tâm thương mại, các cửa hàng truyền thống... trên 63 tỉnh thành Việt Nam; bước đầu đã vươn ra các thị trường nước ngoài như Campuchia, Lào, Myanmar, Ai Cập, Thổ Nhĩ Kỳ và thậm chí ngay cả các thị trường khó tính như Hong Kong, Brazil và Canada, Mexico...</p>
+            </div>
+        </div>
+
+        <!-- Highlight Box -->
+        <div class="col-lg-12">
+            <p>Từ một doanh nghiệp nhỏ, nhờ sự nỗ lực hết mình của toàn thể CBCNV Tập đoàn; sự kề vai sát cánh của quý khách hàng, quý đối tác; cùng tầm nhìn chiến lược rõ ràng của Ban lãnh đạo, quan điểm phát triển bền vững và khát vọng vươn xa, SUNHOUSE đã không ngừng trưởng thành và lớn mạnh. Trong 20 năm qua, Tập đoàn SUNHOUSE vinh dự nhận được nhiều giải thưởng, chứng nhận danh giá như "Thương hiệu quốc gia 2018, 2020"; "Hàng Việt Nam chất lượng cao" từ 2015 - 2020; "Hàng Việt Nam được người tiêu dùng yêu thích", "Tin & Dùng"... trong nhiều năm liên tiếp.</p>
+            
+            <p>Điều này là minh chứng cho những nỗ lực không ngừng nghỉ của Tập đoàn SUNHOUSE trong việc đem đến cho người tiêu dùng những sản phẩm chất lượng, phù hợp với nhu cầu và khả năng chi tiêu. Không chỉ phục vụ khách hàng trong nước, sản phẩm của SUNHOUSE còn được xuất khẩu đi nhiều thị trường khó tính khác như Nhật Bản, Hàn Quốc, Mỹ, Châu Âu, Mexico...</p>
+            
+            <p>Được đánh giá là một trong những Tập đoàn tư nhân lớn mạnh, có chiến lược phát triển bền vững cùng tiềm lực hội nhập quốc tế, SUNHOUSE đã làm nên những điều kỳ diệu để tôn vinh thương hiệu Việt. Trên nền tảng những thành tích đã đạt được; bằng sự đoàn kết, nỗ lực của toàn bộ CBCNV; niềm tự hào thương hiệu Việt và khát vọng vươn xa, Tập đoàn SUNHOUSE đặt mục tiêu trở thành thương hiệu toàn cầu với doanh thu trên 10.000 tỷ vào năm 2025, mở rộng thị trường xuất khẩu và khẳng định tên tuổi trên bản đồ gia dụng thế giới.</p>
+        </div>
+
+        <!-- History Section -->
+        <h2 class="section-title">Lịch sử hình thành & Phát triển</h2>
+        <p>Hơn 20 năm xây dựng và phát triển, SUNHOUSE là cảnh chim đầu đàn của ngành gia dụng Việt Nam</p>
+        
+        <div class="timeline-item">
+            <span class="timeline-year">2000</span>
+            <p>Công ty Cổ phần Tập đoàn SUNHOUSE tiền thân là Công ty TNHH Phú Thắng được thành lập ngày 22/06/2000</p>
+        </div>
+        
+        <div class="timeline-item">
+            <span class="timeline-year">2004</span>
+            <p>SUNHOUSE liên doanh với Công ty TNHH SUNHOUSE Hàn Quốc, thành lập Công ty TNHH SUNHOUSE Việt Nam</p>
+        </div>
+        
+        <div class="timeline-item">
+            <span class="timeline-year">2005</span>
+            <p>SUNHOUSE lắp đặt dây chuyền ứng dụng công nghệ Anodized lạnh tiên tiến từ Hàn Quốc</p>
+        </div>
+        
+        <div class="timeline-item">
+            <span class="timeline-year">2010</span>
+            <p>Chính thức được lấy tên là Công ty Cổ phần Tập đoàn SUNHOUSE, đầu tư vào nhiều lĩnh vực đa dạng (hàng gia dụng, điện gia dụng, thiết bị nhà bếp).</p>
+        </div>
+        
+        <div class="timeline-item">
+            <span class="timeline-year">2014</span>
+            <p>SUNHOUSE mở rộng kinh doanh thêm lĩnh vực Điện dân dụng</p>
+        </div>
+
+<!-- Core Values Section -->
+<div class="container my-5 py-4">
+    <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-orange mb-3">GIÁ TRỊ CỐT LÕI CỦA SUNHOUSE</h2>
+        <p class="lead">Những nguyên tắc nền tảng định hướng mọi hoạt động của chúng tôi</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Sáng tạo -->
+        <div class="col-lg-4">
+            <div class="card value-card h-100 border-0">
+                <div class="card-img-top">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 133901.png" 
+                         alt="Sáng tạo" 
+                         class="img-fluid w-100 h-100 value-image">
+                </div>
+                <div class="card-body text-center px-4 py-4">
+                   
+                    <div class="card-text">
+                        <p>SUNHOUSE không ngừng theo đuổi những sáng kiến mới và thử thách bản thân để tạo ra cơ hội mới</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thấu hiểu -->
+        <div class="col-lg-4">
+            <div class="card value-card h-100 border-0">
+                <div class="card-img-top">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 133926.png" 
+                         alt="Thấu hiểu" 
+                         class="img-fluid w-100 h-100 value-image">
+                </div>
+                <div class="card-body text-center px-4 py-4">
+
+                    <div class="card-text">
+                        <p>Thấu hiểu và quan tâm đến nhu cầu và kỳ vọng của các bạn đồng nghiệp, khách hàng, đại lý và cổ đông</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chuẩn mực -->
+        <div class="col-lg-4">
+            <div class="card value-card h-100 border-0">
+                <div class="card-img-top">
+                    <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 133643.png" 
+                         alt="Chuẩn mực" 
+                         class="img-fluid w-100 h-100 value-image">
+                </div>
+                <div class="card-body text-center px-4 py-4">
+                  
+                    <div class="card-text">
+                        <p>Truyền lòng tin tới mọi người bằng những lời nói chân thật, thể hiện lời nói đi đôi với hành động</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="container my-5 py-4">
+    <div class="row align-items-center">
+        <!-- Bản đồ bên trái -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="map-container position-relative rounded-3 overflow-hidden shadow">
+                <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-02 134656.png" 
+                     alt="Bản đồ chiến lược SUNHOUSE" 
+                     class="img-fluid w-100 h-100">
+                <div class="map-overlay"></div>
+                
+            </div>
+        </div>
+
+        <!-- Thông tin bên phải -->
+        <div class="col-lg-6">
+            <div class="ps-lg-4">
+                <h2 class="display-5 fw-bold text-orange mb-3">MỤC TIÊU CHIẾN LƯỢC ĐẾN NĂM 2025</h2>
+                <p class="lead mb-4">Phát triển cùng SUNHOUSE. Không ngừng trưởng thành, lớn mạnh và vươn xa.</p>
+                
+                <div class="goals-list mb-5">
+                    <div class="goal-item d-flex mb-3">
+                        <div class="goal-icon me-3 text-orange">
+                            <i class="fas fa-bullseye fa-2x"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Trở thành công ty trong nhóm trên 10.000 tỷ đồng</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-item d-flex mb-3">
+                        <div class="goal-icon me-3 text-orange">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Thị trường phục vụ 350 triệu dân</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-item d-flex mb-3">
+                        <div class="goal-icon me-3 text-orange">
+                            <i class="fas fa-globe-asia fa-2x"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Doanh thu xuất khẩu đạt 10 triệu USD</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-item d-flex mb-3">
+                        <div class="goal-icon me-3 text-orange">
+                            <i class="fas fa-trophy fa-2x"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Tên tuổi trên bản đồ gia dụng thế giới</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sức mạnh kênh phân phối -->
+                <div class="distribution-section">
+                    <h3 class="fw-bold text-orange mb-3">SỨC MẠNH KÊNH PHÂN PHỐI</h3>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="distribution-number me-2">05</span>
+                                <span>VPĐD tại nước ngoài</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="distribution-number me-2">02</span>
+                                <span>Chi nhánh trong nước</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="distribution-number me-2">98</span>
+                                <span>Nhà phân phối</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="distribution-number me-2">500</span>
+                                <span>Đại lý</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="distribution-number me-2">60.000</span>
+                                <span>Điểm bán</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
+       <!-- Footer -->
+<footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Cột SẢN PHẨM -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">SẢN PHẨM</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Máy lọc nước</a></li>
+                        <li><a href="#">Đồ gia dụng</a></li>
+                        <li><a href="#">Điện gia dụng</a></li>
+                        <li><a href="#">Thiết bị nhà bếp</a></li>
+                        <li><a href="#">Điện tử Điện lạnh</a></li>
+                        <li><a href="#">Điện dân dụng</a></li>
+                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột VỀ SUNHOUSE -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích giải thưởng</a></li>
+                        <li><a href="#">SUNHOUSE TV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột TIN TỨC & SỰ KIỆN -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                        <li><a href="#">Tin thưởng thức</a></li>
+                        <li><a href="#">Khuyến mại HOT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                        <li><a href="#">Địa điểm bán hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Thông tin liên hệ -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+                    <p>Văn phòng tập đoàn:<br>
+                    024.37396676 / 024.37396666<br>
+                    Tổng đài CSKH: 1800 6680</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+                    <p>Email: info@sunhouse.com.vn<br>
+                    Website: www.sunhouse.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
