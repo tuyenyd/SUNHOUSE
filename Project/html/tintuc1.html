@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="../css/sunhouse.css">
+     <style>
+    .text-orange {
+        color:  #0d7182;
+    }
+    
+    .border-orange {
+        border-color:  #0d7182 !important;
+    }
+    
+    .bg-orange {
+        background-color:  red;
+    }
+    
+    .badge {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .badge {
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+        }
+    }
+       .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        .card {
+            height: 400px; /* Chiều cao cố định cho toàn bộ card */
+            display: flex;
+            flex-direction: column;
+        }
+        .card-body {
+            flex-grow: 1;
+            overflow: hidden; /* Ẩn nội dung vượt quá */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .card-text {
+            margin-bottom: 0; /* Loại bỏ margin mặc định */
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</style>
+</head>
+<body>
+ <!-- Header -->
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                    <div class="dropdown">
+                       <a href="home.html"><img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-01 145852.png" alt="Sunhouse Logo"></a>
+                    </div>
+                     <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="gioithieu5.html">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="#">Điện tử Điện lạnh</a>
+                                    <a href="#">Thiết bị nhà bếp</a>
+                                    <a href="#">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>
+                    
+                </nav>
+            </div>
+            <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+            <div class="header-actions">
+               
+                <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container py-5">
+    <!-- Tiêu đề và ngày tháng -->
+    <div class="mb-4">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Trang chủ</li>
+                <li class="breadcrumb-item active" aria-current="page">Tin hoạt động</li>
+                <li class="breadcrumb-item active" aria-current="page">Máy lọc nước SUNHOUSE RO UltraX xuất sắc tiến vào chung kết Tech Awards 2024</li>
+            </ol>
+        </nav>
+    
+    </div>
+    </div>
+      <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-03 153450.png" style="width: 1520px;">
+      
+    
+    <div class="row" style="margin: 100px;">
+         <h2 class="fw-bold text-orange mb-2">Máy lọc nước SUNHOUSE RO UltraX xuất sắc tiến vào chung kết Tech Awards 2024</h2>
+            <div class="col-lg-12">
+                <p>Máy lọc nước RO UltraX của SUNHOUSE đã chính thức ghi tên mình vào vòng chung kết Tech Awards 2024, giải thưởng uy tín do VnExpress tổ chức nhằm vinh danh các sản phẩm công nghệ và thương hiệu xuất sắc nhất năm. Đây là một cột mốc đầy tự hào, đặc biệt khi RO UltraX chỉ vừa ra mắt thị trường chưa đầy 3 tháng.</p>
+                <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-03 154842.png" style="margin-left: 150px;">
+                <p>Thành tích này không chỉ phản ánh chất lượng vượt trội và công nghệ tiên phong của sản phẩm, mà còn khẳng định sự đón nhận nồng nhiệt từ người tiêu dùng. Trong thời gian ngắn, RO UltraX đã nhanh chóng chinh phục khách hàng bằng các tính năng ưu việt như công nghệ điện phân gấp đôi hydrogen trong nước, thiết kế hiện đại và tiện ích vượt trội, góp phần mang lại nguồn nước khỏe, giàu khoáng chất, an toàn cho sức khỏe. Đây là minh chứng rõ ràng cho chiến lược nghiên cứu phát triển sản phẩm bài bản và cam kết không ngừng tiên phong đổi mới công nghệ của SUNHOUSE trong hành trình đáp ứng nhu cầu sống khỏe, sống tiện nghi của người tiêu dùng.</p>
+                <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-03 155219.png" style="margin-left: 150px;width: 1000px;">
+                <p>Tech Awards là một giải thưởng danh giá dành cho các sản phẩm công nghệ nổi bật, thiết bị số và thương hiệu uy tín. Để lọt vào vòng chung kết, các sản phẩm phải trải qua quy trình đánh giá khắt khe từ hội đồng chuyên môn và sự bình chọn của người tiêu dùng.Việc lọt vào vòng chung kết Tech Awards 2024 không chỉ là sự công nhận xứng đáng cho RO UltraX, mà còn là cơ hội để sản phẩm tiếp cận gần hơn với đông đảo người tiêu dùng trên toàn quốc. Giải thưởng này sẽ là động lực lớn để SUNHOUSE tiếp tục khẳng định vị thế dẫn đầu, nâng tầm giá trị thương hiệu Việt trên thị trường quốc tế.</p>
+                <p><b>Hãy cùng tham gia bình chọn cho RO UltraX:</b></p>
+                <p>Để Máy lọc nước SUNHOUSE RO UltraX thực sự gây được dấu ấn lớn trong cuộc đua “Thương hiệu máy lọc nước xuất sắc nhất 2024”, Tập đoàn SUNHOUSE rất hy vọng nhận được sự ủng hộ và bình chọn từ tất cả các khách hàng yêu quý thương hiệu SUNHOUSE và sản phẩm RO UltraX:</p>
+                <ul>
+                    <li>Tham gia bình chọn: [Tại đây]</li>
+                    <li>Thời gian bình chọn: Từ ngày 3/12/2024 đến hết ngày 24/12/2024</li>
+                </ul>
+                <p><b>Xin cảm ơn sự đồng hành và yêu mến của Quý Khách hàng, Đối tác và Người tiêu dùng toàn quốc!! </b></p>
+            </div>
+        </div>
+ <!-- Footer -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Cột SẢN PHẨM -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">SẢN PHẨM</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Máy lọc nước</a></li>
+                        <li><a href="#">Đồ gia dụng</a></li>
+                        <li><a href="#">Điện gia dụng</a></li>
+                        <li><a href="#">Thiết bị nhà bếp</a></li>
+                        <li><a href="#">Điện tử Điện lạnh</a></li>
+                        <li><a href="#">Điện dân dụng</a></li>
+                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột VỀ SUNHOUSE -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích giải thưởng</a></li>
+                        <li><a href="#">SUNHOUSE TV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột TIN TỨC & SỰ KIỆN -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                        <li><a href="#">Tin thưởng thức</a></li>
+                        <li><a href="#">Khuyến mại HOT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                        <li><a href="#">Địa điểm bán hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Thông tin liên hệ -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+                    <p>Văn phòng tập đoàn:<br>
+                    024.37396676 / 024.37396666<br>
+                    Tổng đài CSKH: 1800 6680</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+                    <p>Email: info@sunhouse.com.vn<br>
+                    Website: www.sunhouse.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

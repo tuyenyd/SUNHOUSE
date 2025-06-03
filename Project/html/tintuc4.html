@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="../css/sunhouse.css">
+     <style>
+    .text-orange {
+        color:  #0d7182;
+    }
+    
+    .border-orange {
+        border-color:  #0d7182 !important;
+    }
+    
+    .bg-orange {
+        background-color:  red;
+    }
+    
+    .badge {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .badge {
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+        }
+    }
+       .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        .card {
+            height: 400px; /* Chiều cao cố định cho toàn bộ card */
+            display: flex;
+            flex-direction: column;
+        }
+        .card-body {
+            flex-grow: 1;
+            overflow: hidden; /* Ẩn nội dung vượt quá */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .card-text {
+            margin-bottom: 0; /* Loại bỏ margin mặc định */
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</style>
+</head>
+<body>
+ <!-- Header -->
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                    <div class="dropdown">
+                       <a href="home.html"><img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-01 145852.png" alt="Sunhouse Logo"></a>
+                    </div>
+                     <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="gioithieu5.html">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="#">Điện tử Điện lạnh</a>
+                                    <a href="#">Thiết bị nhà bếp</a>
+                                    <a href="#">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>
+                    
+                </nav>
+            </div>
+            <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+            <div class="header-actions">
+               
+                <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container py-5">
+    <!-- Tiêu đề và ngày tháng -->
+    <div class="mb-4">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Trang chủ</li>
+                <li class="breadcrumb-item active" aria-current="page">Tin hoạt động</li>
+                <li class="breadcrumb-item active" aria-current="page">Sunhouse – Thương hiệu quốc gia, sản phẩm quốc dân</li>
+            </ol>
+        </nav>
+    
+    </div>
+    </div>
+      <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-03 153450.png" style="width: 1520px;">
+      
+    
+    <div class="row" style="margin: 100px;">
+         <h2 class="fw-bold text-orange mb-2">Sunhouse – Thương hiệu quốc gia, sản phẩm quốc dân</h2>
+            <div class="col-lg-12">
+                <p><b>Với những nỗ lực bền bỉ trong hơn 20 năm qua, Sunhouse giữ vững vị thế trong Top 500 doanh nghiệp lớn nhất Việt Nam. Doanh nghiệp cũng khẳng định vị trí hàng đầu ngành hàng gia dùng, được người tiêu dùng Việt ưa chuộng.</b></p>
+                <p><b>Duy nhất trong ngành gia dụng đạt “Thương hiệu quốc gia”</b></p>
+                <p>Sunhouse là doanh nghiệp sở hữu hệ sinh thái sản xuất đồ gia dụng lớn nhất Việt Nam. Sau 23 năm thành lập, đến nay, Sunhouse có hơn 2.500 cán bộ công nhân viên, người lao động. Sunhouse sở hữu hệ thống 10 nhà máy từ Bắc vào Nam phục vụ sản xuất, lắp ráp sản phẩm gia dụng nhà bếp thiết yếu như: nồi inox/ancod, chảo chống dính, bếp gas, bếp từ, nồi cơm điện, máy lọc nước RO, nồi chiên không dầu…Sản phẩm Sunhouse có mặt tại toàn bộ hệ thống siêu thị, trung tâm thương mại, cửa hàng truyền thống trên cả nước với hơn 60.000 điểm bán. Sunhouse cũng có mặt tại 20 quốc gia khác, đặc biệt đã chinh phục các thị trường xuất khẩu khó tính như: Nhật Bản, Hàn Quốc, Mỹ, Mexico…Bằng những nỗ lực của mình, Sunhouse tự hào là doanh nghiệp duy nhất trong ngành gia dụng có sản phẩm đạt “Thương hiệu quốc gia”. Đây là bảo chứng cao nhất cho sản phẩm của một thương hiệu Việt, đặc biệt uy tín khi đưa sản phẩm xuất khẩu. Sunhouse cũng liên tục góp mặt và thăng hạng trong bảng xếp hạng các Doanh nghiệp lớn nhất Việt Nam (VNR500). Gần nhất, năm 2023, Sunhouse đạt thứ hạng 173/500 Doanh nghiệp tư nhân, vững vàng với mức tăng trưởng đều đặn 25-30% mỗi năm. Sunhouse đặt mục tiêu đến năm 2025 trở thành doanh nghiệp trong nhóm trên 10.000 tỷ đồng, phục vụ 350 triệu dân và mở rộng hơn nữa các thị trường xuất khẩu.</p>
+                <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-03 170301.png" style="margin-left: 150px;">
+                
+                <p style="margin-left: 400px;"><i>Sunhouse đón nhận danh hiệu sản phẩm thương hiệu quốc gia năm 2022</i></p>
+                <p>Để có được sự lớn mạnh trên, Sunhouse đã liên tục mở rộng hệ thống sản xuất và quản trị chất lượng. Từ dây chuyền chảo chống dính đầu tiên được lắp đặt vào năm 2004, cho đến nay, Sunhouse đã đưa vào vận hành các nhà máy, dây chuyền sản xuất sản phẩm gia dụng thiết yếu nồi cơm điện, dây chuyền bếp ga, dây chuyền bếp từ, nhà máy lọc nước R.O… Đặc biệt phải kể đến một số nhà máy với các nhiệm vụ chuyên biệt như nhà máy mạch điện tử Narae Sunhouse System, nhà máy nhôm nhựa Aluba, nhà máy bóng đèn Lighting, nhà máy sản xuất nồi chiên không dầu xuất khẩu sang Mỹ…..</p>
+                <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-03 170309.png" style="margin-left: 150px;width: 1000px;">
+                
+                <p style="margin-left: 400px;"><i>Hệ thống nhà máy lớn của Sunhouse sản xuất sản phẩm được người tiêu dùng yêu thích</i></p>
+                <p>Liên tục đưa vào vận hành chuỗi nhà máy lớn, Sunhouse làm chủ công nghệ lõi, làm chủ chất lượng sản phẩm trên nhiều lĩnh vực (gồm nhựa, cơ khí, vi mạch và công nghệ phụ trợ như sơn mạ, chống dính). Đặc biệt, sản phẩm nồi chiên không dầu do Sunhouse sản xuất đáp ứng được những quy định kiểm định quốc tế khắt khe nhất, được thị trường Mỹ công nhận và đặt nhiều đơn hàng. Với vốn đầu tư 5 triệu USD cho giai đoạn 1, nhà máy sản xuất nồi chiên không dầu SUNHOUSE là nhà máy đầu tiên và duy nhất tại Việt Nam đáp ứng tiêu chuẩn các đơn hàng quốc tế với thị trường khó tính như Mỹ.</p>
+                <p><b>Sản phẩm quốc dân, được người tiêu dùng yêu thích</b></p>
+                <p>Sau gần 25 năm hình thành và phát triển, Sunhouse ngày càng khẳng định vị thế dẫn đầu trong ngành hàng gia dụng. Nhiều sản phẩm của Sunhouse được vinh danh “Hàng Việt Nam chất lượng cao”, Top 1 “Hàng Việt Nam được người tiêu dùng yêu thích” như Nồi cơm điện, Máy lọc nước, Bếp gas… Đây đồng thời cũng là những sản phẩm chiếm phần lớn thị phần trong nước như chảo chống dính chiếm 45%; Nồi cơm điện chiếm 38%; Ấm siêu tốc chiếm 35%; Bếp gas chiếm 20%...
+Một trong những sản phẩm được vinh danh Thương hiệu được yêu thích nhất của Sunhouse là máy lọc nước RO. Kết quả được công bố bởi TechAwards, dựa trên 40% bình chọn của khán giả và 60% chấm điểm từ chuyên gia công nghệ. Đây cũng là thành quả xứng đáng sau 7 năm gia nhập thị trường của dòng sản phẩm Máy lọc nước Sunhouse. Hiện nay, R.O Sunhouse đã chiếm lĩnh đến 20% thị phần, trở một trong 3 thương hiệu bán chạy nhất tại Việt Nam, bất chấp việc phải cạnh tranh với hơn 400 thương hiệu trong và ngoài nước khác.</p>
+                
+                <img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-03 170327.png" style="margin-left: 150px;width: 1000px;">
+                
+                <p style="margin-left: 250px;"><i>Sản phẩm nồi chiên không dầu đầu tiên và duy nhất Made in Việt Nam được người tiêu dùng lựa chọn.</i></p>
+                <p>Một sản phẩm khác là Nồi chiên không dầu Sunhouse với đủ tiêu chuẩn xuất khẩu sang Mỹ. Cùng trên hệ thống dây chuyền sản xuất đồng bộ, đáp ứng tiêu chuẩn của thị trường Mỹ, năm 2022, Sunhouse sản xuất và cho ra mắt nồi chiên không dầu phục vụ người tiêu dùng trong nước. Với 5 triệu USD đầu tư cho giai đoạn 1, dây chuyền có thể sản xuất tối đa 50.000 sản phẩm/tháng, đáp ứng vừa cho nhu cầu trong nước, vừa xuất khẩu đều đặn. Nồi chiên không dầu Sunhouse được thiết kế riêng bởi đội ngũ kỹ sư và chuyên gia, dựa trên nhu cầu sử dụng và văn hóa nấu nướng của người Việt, với mục tiêu trở thành sản phẩm thiết yếu trong gian bếp nhờ tính tiện dụng và khả năng chế biến nhiều món ăn trong mâm cơm Việt. Kiểm soát chất lượng sản phẩm nghiêm ngặt, chủ động 100% trong sản xuất hướng đến mục tiêu tối ưu hóa giá thành sản phẩm, nồi chiên không dầu SUNHOUSE là sản phẩm nồi chiên đầu tiên và duy nhất Made in Việt Nam được người tiêu dùng yêu thích và lựa chọn.</p>
+                
+                <p>“Sunhouse hiểu rõ trách nhiệm và sứ mệnh của mình khi đưa những sản phẩm mang Thương hiệu quốc gia Việt Nam ra trường quốc tế. Đây không chỉ là bảo chứng cho chất lượng của những sản phẩm mang thương hiệu Việt mà còn góp phần gia tăng giá trị của thương hiệu quốc gia Việt Nam trên bản đồ xếp hạng các thương hiệu mạnh thế giới”, ông Lê Tùng - Giám đốc Chiến lược Tập đoàn Sunhouse chia sẻ.</p>
+               
+        </div>
+    </div>
+ <!-- Footer -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Cột SẢN PHẨM -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">SẢN PHẨM</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Máy lọc nước</a></li>
+                        <li><a href="#">Đồ gia dụng</a></li>
+                        <li><a href="#">Điện gia dụng</a></li>
+                        <li><a href="#">Thiết bị nhà bếp</a></li>
+                        <li><a href="#">Điện tử Điện lạnh</a></li>
+                        <li><a href="#">Điện dân dụng</a></li>
+                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột VỀ SUNHOUSE -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích giải thưởng</a></li>
+                        <li><a href="#">SUNHOUSE TV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột TIN TỨC & SỰ KIỆN -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                        <li><a href="#">Tin thưởng thức</a></li>
+                        <li><a href="#">Khuyến mại HOT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                        <li><a href="#">Địa điểm bán hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Thông tin liên hệ -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+                    <p>Văn phòng tập đoàn:<br>
+                    024.37396676 / 024.37396666<br>
+                    Tổng đài CSKH: 1800 6680</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+                    <p>Email: info@sunhouse.com.vn<br>
+                    Website: www.sunhouse.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
