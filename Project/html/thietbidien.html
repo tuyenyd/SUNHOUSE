@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="../css/sunhouse.css">
+     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+     <script>
+        $(document).ready(function(){
+            $("#toggleBtn").click(function(){
+                $("#moreContent").toggle();
+            })
+        })
+     </script>
+     <style>
+        p {
+            font-family: 'Roboto', sans-serif;
+        }
+     </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                    <div class="dropdown">
+                       <a href="home.html"><img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-01 145852.png" style="height: 60px;" alt="Sunhouse Logo"></a>
+                    </div>
+                     <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="gioithieu5.html">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="#">Điện tử Điện lạnh</a>
+                                    <a href="#">Thiết bị nhà bếp</a>
+                                    <a href="#">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>
+                    
+                </nav>
+            </div>
+            <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+            <div class="header-actions">
+               
+                <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <img src="/Project/image/bannerThietbidien.jpg" alt="" width="100%">
+    </div>
+
+    <section class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="fw-bold text-primary mb-4">Câu chuyện SUNHOUSE</h2>
+
+        <!-- Icon dấu ngoặc kép -->
+        <div class="mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#cce6e6" class="bi bi-quote" viewBox="0 0 16 16">
+            <path d="M6.52 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4.5A.5.5 0 0 0 4 7.5V9H6v1H4a1 1 0 0 1-1-1V7.5A2.5 2.5 0 0 1 5.5 5H6V2.5a.5.5 0 0 1 .5-.5zm6 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-2.02a.5.5 0 0 0-.48.5V9h2v1h-2a1 1 0 0 1-1-1V7.5A2.5 2.5 0 0 1 11.5 5H12V2.5a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+        </div>
+
+        <!-- Nội dung rút gọn -->
+        <p class="mb-3 px-3">
+        Thiết bị công nghiệp là một trong số các nhóm sản phẩm mở rộng lĩnh vực kinh doanh thành công của SUNHOUSE. 
+        Hiện tại, SUNHOUSE vẫn đang nghiên cứu để tạo ra nhiều nguồn hàng phong phú và vượt trội, 
+        đáp ứng tốt hơn nhu cầu của các nhóm khách hàng khác nhau.
+        </p>
+        <p class="px-3">
+        Thị trường thiết bị <strong>điện công nghiệp</strong> ngày càng trở nên sôi động, phong phú với nhiều thiết bị, sản phẩm khác nhau cùng hàng loạt các nhà sản xuất, nhà cung cấp ra đời.
+        Thấy trước tương lai thị trường này, SUNHOUSE sớm mở thêm lĩnh vực kinh doanh Thiết bị điện công nghiệp và đến nay đã gặt hái được nhiều thành tựu đáng kể.
+        </p>
+
+        <!-- Nội dung ẩn -->
+        <div id="moreContent" class="collapse text-start mt-4 px-3s">
+        <p>
+            Với dây chuyền ứng dụng công nghệ hiện đại (đạt tiêu chuẩn ISO 9001:2008 do tổ chức DAS chứng nhận), sản phẩm của SUNHOUSE được tạo ra với chất lượng cao cùng giá thành hợp lý nhất. 
+            Không những thế, để đảm bảo tính an toàn khi thi công lắp đặt và sử dụng, tất cả các sản phẩm đều được kiểm định nghiêm ngặt trước khi đưa ra thị trường.
+        </p>
+        <p>
+            Thiết bị điện công nghiệp SUNHOUSE hiện đã trở thành thương hiệu hàng đầu trong lĩnh vực cung cấp các sản phẩm của mình, 
+            được các đối tác trong và ngoài nước tin tưởng lựa chọn hợp tác. Trong đó, nhiều công ty thiết bị điện, thiết bị công nghiệp lớn trên thế giới như Schneider, ABB, Raychem đã tin tưởng lựa chọn chúng tôi là nhà phân phối chính hãng tại Việt Nam. 
+            Chúng tôi cũng tự hào là đơn vị cung cấp thiết bị điện, thiết bị công nghiệp cho các công trình trọng điểm quốc gia.
+        </p>
+        <p>
+            Liên tiếp nhiều năm, SUNHOUSE vinh dự nhận được những giải thưởng danh giá như “Tin & Dùng Việt Nam”, “Hàng Việt Nam chất lượng cao” hay “Thương hiệu mạnh Việt Nam”… 
+            Điều này là minh chứng rõ ràng cho sự tin tưởng của khách hàng với thương hiệu SUNHOUSE, cũng là nguồn động viên để SUNHOUSE không ngừng cải tiến công nghệ, nâng cao trình độ chuyên môn và chất lượng sản phẩm.
+        </p>
+        <p><strong>Quý khách có thể tham khảo tất cả các nhóm hàng Thiết bị điện công nghiệp của SUNHOUSE và mua ngay tại đây</strong></p>
+        </div>
+
+        <!-- Nút xem thêm / thu gọn -->
+        <button id="toggleBtn" class="btn btn-outline-primary mt-3 px-4" data-bs-toggle="collapse" data-bs-target="#moreContent">
+        Xem thêm &rarr;
+        </button>
+    </div>
+    </section>
+
+
+    <!-- Product -->
+    <section class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <!-- Product Card 1 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh1.JPG" class="card-img-top" alt="Tủ điện hạ thế">
+          <div class="card-body">
+            <h5 class="card-title">Tủ điện hạ thế</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh2.JPG" class="card-img-top" alt="Thang máng cáp">
+          <div class="card-body">
+            <h5 class="card-title">Thang máng cáp</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh3.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Đầu cáp hộp nối</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 4 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh4.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Tủ trung thế</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div><!-- Product Card 5 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh5.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Thiết bị đóng cắt</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div><!-- Product Card 6 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh6.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Cáp điện</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div><!-- Product Card 7 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh7.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Thiết bị đo đếm</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div><!-- Product Card 8 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh8.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Busway</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div><!-- Product Card 9 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh9.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Máy biến áp</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div><!-- Product Card 10 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="/Project/image/anh10.JPG" class="card-img-top" alt="Đầu cáp hộp nối">
+          <div class="card-body">
+            <h5 class="card-title">Máy phát điện</h5>
+            <a href="#" class="btn border-primary">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Cột SẢN PHẨM -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">SẢN PHẨM</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Máy lọc nước</a></li>
+                        <li><a href="#">Đồ gia dụng</a></li>
+                        <li><a href="#">Điện gia dụng</a></li>
+                        <li><a href="#">Thiết bị nhà bếp</a></li>
+                        <li><a href="#">Điện tử Điện lạnh</a></li>
+                        <li><a href="#">Điện dân dụng</a></li>
+                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột VỀ SUNHOUSE -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích giải thưởng</a></li>
+                        <li><a href="#">SUNHOUSE TV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột TIN TỨC & SỰ KIỆN -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                        <li><a href="#">Tin thưởng thức</a></li>
+                        <li><a href="#">Khuyến mại HOT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                        <li><a href="#">Địa điểm bán hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Thông tin liên hệ -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+                    <p>Văn phòng tập đoàn:<br>
+                    024.37396676 / 024.37396666<br>
+                    Tổng đài CSKH: 1800 6680</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+                    <p>Email: info@sunhouse.com.vn<br>
+                    Website: www.sunhouse.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
