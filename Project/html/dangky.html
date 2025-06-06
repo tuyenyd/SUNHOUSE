@@ -8,8 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     <link rel="stylesheet" href="../css/sunhouse.css">
-     <style>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/sunhouse.css">
+    <style>
     .text-orange {
         color:  #0d7182;
     }
@@ -39,96 +41,112 @@
         }
     }
     
-         .registration-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #0d7182;
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            color: #0d7182;
-            font-size: 18px;
-            border-bottom: 2px solid #0d7182;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
-        .form-section {
-            margin-bottom: 30px;
-        }
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-        .form-group {
-            flex: 1;
-            min-width: 250px;
-            margin-right: 20px;
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group label:after {
-            content: " *";
-            color: #0d7182;
-        }
-        .form-group.optional label:after {
-            content: "";
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
-        .divider {
-            border-top: 1px solid #ddd;
-            margin: 30px 0;
-        }
-        .login-link {
-            text-align: center;
-            margin: 20px 0;
-            color: #666;
-        }
-        .login-link a {
-            color: #0d7182;
-            text-decoration: none;
-        }
-        .register-btn {
-            display: block;
-            width: 200px;
-            margin: 0 auto;
-            padding: 10px;
-            background-color: #0d7182;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-        }
-        .register-btn:hover {
-            background-color: #b82218;
-        }
+    .registration-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #0d7182;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    h2 {
+        color: #0d7182;
+        font-size: 18px;
+        border-bottom: 2px solid #0d7182;
+        padding-bottom: 5px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .form-section {
+        margin-bottom: 30px;
+    }
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+    .form-group {
+        flex: 1;
+        min-width: 250px;
+        margin-right: 20px;
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .form-group label:after {
+        content: " *";
+        color: #0d7182;
+    }
+    .form-group.optional label:after {
+        content: "";
+    }
+    .form-group input {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    .form-group input.is-invalid {
+        border-color: #dc3545;
+    }
+    .invalid-feedback {
+        color: #dc3545;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+    }
+    .form-group input.is-invalid ~ .invalid-feedback {
+        display: block;
+    }
+    .divider {
+        border-top: 1px solid #ddd;
+        margin: 30px 0;
+    }
+    .login-link {
+        text-align: center;
+        margin: 20px 0;
+        color: #666;
+    }
+    .login-link a {
+        color: #0d7182;
+        text-decoration: none;
+    }
+    .register-btn {
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #0d7182;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+    }
+    .register-btn:hover {
+        background-color: #b82218;
+    }
+    .alert-success {
+        margin-bottom: 20px;
+        display: none;
+    }
 </style>
 </head>
 <body>
- <!-- Header -->
-   <header class="sunhouse-header">
+<!-- Header -->
+<header class="sunhouse-header">
     <div class="header-container">
         <div class="logo-container">
             <nav class="main-nav">
@@ -183,38 +201,39 @@
         </div>
         <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
         <div class="header-actions">
-            
             <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
             <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
             <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
             <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
-             <div class="dropdown">
+            <div class="dropdown">
                 <a href="#" class="action-link"><i class="fas fa-user"></i> TÀI KHOẢN</a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a href="dangnhap.html"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
                     <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
-                    
                 </div>
             </div>
-            
         </div>
     </div>
 </header>
 
-  <div class="container py-5">
+<div class="container py-5">
     <!-- Tiêu đề và ngày tháng -->
     <div class="mb-4">
-         <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Trang chủ</li>
                 <li class="breadcrumb-item active" aria-current="page">Đăng ký tài khoản</li>
             </ol>
         </nav>
     </div>
+</div>
+
+<div class="registration-container" style="margin-bottom: 100px;">
+    <h1>Đăng ký thành viên</h1>
+    <div class="alert alert-success" role="alert">
+        Đăng ký thành công!
     </div>
- <div class="registration-container" style="margin-bottom: 100px;">
-        <h1>Đăng ký thành viên</h1>
-        
+    <form id="registerForm">
         <div class="form-section">
             <h2>Thông tin công ty/Nhà phân phối/Đại lý</h2>
             
@@ -222,10 +241,12 @@
                 <div class="form-group">
                     <label for="company-name">Tên</label>
                     <input type="text" id="company-name" required>
+                    <div class="invalid-feedback">Vui lòng nhập tên công ty</div>
                 </div>
                 <div class="form-group">
                     <label for="address">Địa chỉ</label>
                     <input type="text" id="address" required>
+                    <div class="invalid-feedback">Vui lòng nhập địa chỉ</div>
                 </div>
             </div>
             
@@ -233,32 +254,38 @@
                 <div class="form-group">
                     <label for="phone">Điện thoại</label>
                     <input type="tel" id="phone" required>
+                    <div class="invalid-feedback">Vui lòng nhập số điện thoại hợp lệ</div>
                 </div>
                 <div class="form-group optional">
                     <label for="establish-date">Ngày thành lập</label>
-                    <input type="date" id="establish-date">
+                    <input type="date" id="establish-date" required>
+                    <div class="invalid-feedback">Vui lòng nhập ngày thành lập hợp lệ</div>
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="form-group optional">
                     <label for="business-field">Lĩnh vực kinh doanh</label>
-                    <input type="text" id="business-field">
+                    <input type="text" id="business-field" required>
+                    <div class="invalid-feedback">Vui lòng nhập lĩnh vực kinh doanh</div>
                 </div>
                 <div class="form-group optional">
                     <label for="tax-code">Mã số thuế</label>
-                    <input type="text" id="tax-code">
+                    <input type="text" id="tax-code" required>
+                    <div class="invalid-feedback">Vui lòng nhập mã số thuế hợp lệ</div>
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="form-group optional">
                     <label for="director">Họ tên giám đốc</label>
-                    <input type="text" id="director">
+                    <input type="text" id="director" required>
+                    <div class="invalid-feedback">Vui lòng nhập tên giám đốc</div>
                 </div>
                 <div class="form-group">
                     <label for="content">Nội dung mong muốn</label>
                     <input type="text" id="content" required>
+                    <div class="invalid-feedback">Vui lòng nhập nội dung mong muốn</div>
                 </div>
             </div>
         </div>
@@ -272,21 +299,25 @@
                 <div class="form-group">
                     <label for="person-name">Tên</label>
                     <input type="text" id="person-name" required>
+                    <div class="invalid-feedback">Vui lòng nhập tên người phụ trách</div>
                 </div>
                 <div class="form-group">
                     <label for="person-phone">Điện thoại</label>
                     <input type="tel" id="person-phone" required>
+                    <div class="invalid-feedback">Vui lòng nhập số điện thoại hợp lệ</div>
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="form-group optional">
                     <label for="gender">Giới tính</label>
-                    <input type="text" id="gender">
+                    <input type="text" id="gender" required>
+                    <div class="invalid-feedback">Vui lòng nhập giới tính</div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" required>
+                    <div class="invalid-feedback">Vui lòng nhập email hợp lệ</div>
                 </div>
             </div>
             
@@ -294,10 +325,12 @@
                 <div class="form-group">
                     <label for="password">Mật khẩu</label>
                     <input type="password" id="password" required>
+                    <div class="invalid-feedback">Mật khẩu phải có ít nhất 6 ký tự</div>
                 </div>
                 <div class="form-group">
                     <label for="repassword">Nhập lại mật khẩu</label>
                     <input type="password" id="repassword" required>
+                    <div class="invalid-feedback">Mật khẩu nhập lại không khớp</div>
                 </div>
             </div>
         </div>
@@ -309,84 +342,140 @@
         </div>
         
         <button type="submit" class="register-btn">ĐĂNG KÝ NGAY</button>
-    </div>
- <!-- Footer -->
-    <footer class="footer pt-5 pb-4">
-        <div class="container">
-            <div class="row">
-                <!-- Cột SẢN PHẨM -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="footer-title">SẢN PHẨM</h5>
-                    <ul class="footer-list">
-                        <li><a href="#">Máy lọc nước</a></li>
-                        <li><a href="#">Đồ gia dụng</a></li>
-                        <li><a href="#">Điện gia dụng</a></li>
-                        <li><a href="#">Thiết bị nhà bếp</a></li>
-                        <li><a href="#">Điện tử Điện lạnh</a></li>
-                        <li><a href="#">Điện dân dụng</a></li>
-                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
-                    </ul>
-                </div>
+    </form>
+</div>
 
-                <!-- Cột VỀ SUNHOUSE -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
-                    <ul class="footer-list">
-                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
-                        <li><a href="#">Cơ cấu tổ chức</a></li>
-                        <li><a href="#">Thành tích giải thưởng</a></li>
-                        <li><a href="#">SUNHOUSE TV</a></li>
-                    </ul>
-                </div>
-
-                <!-- Cột TIN TỨC & SỰ KIỆN -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
-                    <ul class="footer-list">
-                        <li><a href="#">Tin hoạt động</a></li>
-                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
-                        <li><a href="#">Tin thưởng thức</a></li>
-                        <li><a href="#">Khuyến mại HOT</a></li>
-                    </ul>
-                </div>
-
-                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
-                <div class="col-md-3 mb-4">
-                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
-                    <ul class="footer-list">
-                        <li><a href="#">Chính sách bảo hành</a></li>
-                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
-                        <li><a href="#">Địa điểm bán hàng</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                    </ul>
-                </div>
+<!-- Footer -->
+<footer class="footer pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <!-- Cột SẢN PHẨM -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">SẢN PHẨM</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Máy lọc nước</a></li>
+                    <li><a href="#">Đồ gia dụng</a></li>
+                    <li><a href="#">Điện gia dụng</a></li>
+                    <li><a href="#">Thiết bị nhà bếp</a></li>
+                    <li><a href="#">Điện tử Điện lạnh</a></li>
+                    <li><a href="#">Điện dân dụng</a></li>
+                    <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                </ul>
             </div>
 
-            <div class="row">
-                <!-- Thông tin liên hệ -->
-                <div class="col-md-3 mb-3">
-                    <h6 class="footer-title">ĐỊA CHỈ</h6>
-                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
-                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
-                </div>
+            <!-- Cột VỀ SUNHOUSE -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                    <li><a href="#">Cơ cấu tổ chức</a></li>
+                    <li><a href="#">Thành tích giải thưởng</a></li>
+                    <li><a href="#">SUNHOUSE TV</a></li>
+                </ul>
+            </div>
 
-                <div class="col-md-3 mb-3">
-                    <h6 class="footer-title">ĐIỆN THOẠI</h6>
-                    <p>Văn phòng tập đoàn:<br>
-                    024.37396676 / 024.37396666<br>
-                    Tổng đài CSKH: 1800 6680</p>
-                </div>
-                 <div class="col-md-3 mb-3">
-                    <h6 class="footer-title">EMAIL</h6>
-                    <p>Email: info@sunhouse.com.vn</p>
-                </div>
-                 <div class="col-md-3 mb-3">
-                    <h6 class="footer-title">WEBSITE</h6>
-                    <p>Website: www.sunhouse.com.vn</p>
-                </div>
+            <!-- Cột TIN TỨC & SỰ KIỆN -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Tin hoạt động</a></li>
+                    <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                    <li><a href="#">Tin thưởng thức</a></li>
+                    <li><a href="#">Khuyến mại HOT</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                    <li><a href="#">Địa điểm bán hàng</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
 
+        <div class="row">
+            <!-- Thông tin liên hệ -->
+            <div class="col-md-3 mb-3">
+                <h6 class="footer-title">ĐỊA CHỈ</h6>
+                <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <h6 class="footer-title">ĐIỆN THOẠI</h6>
+                <p>Văn phòng tập đoàn:<br>
+                024.37396676 / 024.37396666<br>
+                Tổng đài CSKH: 1800 6680</p>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h6 class="footer-title">EMAIL</h6>
+                <p>Email: info@sunhouse.com.vn</p>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h6 class="footer-title">WEBSITE</h6>
+                <p>Website: www.sunhouse.com.vn</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+$(document).ready(function() {
+    $('#registerForm').on('submit', function(e) {
+        e.preventDefault();
+        
+        // Reset validation styles and hide alert
+        $('input').removeClass('is-invalid');
+        $('.alert-success').hide();
+        
+        let isValid = true;
+        
+        // Validate all fields (required and optional)
+        const fields = [
+            { id: 'company-name', required: true, message: 'Vui lòng nhập tên công ty', validate: val => val.trim().length > 0 },
+            { id: 'address', required: true, message: 'Vui lòng nhập địa chỉ', validate: val => val.trim().length > 0 },
+            { id: 'phone', required: true, message: 'Vui lòng nhập số điện thoại hợp lệ', validate: val => /^\d{10,}$/.test(val) },
+            { id: 'establish-date', required: false, message: 'Vui lòng nhập ngày thành lập hợp lệ', validate: val => !val || !isNaN(Date.parse(val)) },
+            { id: 'business-field', required: false, message: 'Vui lòng nhập lĩnh vực kinh doanh', validate: val => !val || val.trim().length > 0 },
+            { id: 'tax-code', required: false, message: 'Vui lòng nhập mã số thuế hợp lệ', validate: val => !val || /^[0-9-]{6}$/.test(val) },
+            { id: 'director', required: false, message: 'Vui lòng nhập tên giám đốc', validate: val => !val || val.trim().length > 0 },
+            { id: 'content', required: true, message: 'Vui lòng nhập nội dung mong muốn', validate: val => val.trim().length > 0 },
+            { id: 'person-name', required: true, message: 'Vui lòng nhập tên người phụ trách', validate: val => val.trim().length > 0 },
+            { id: 'person-phone', required: true, message: 'Vui lòng nhập số điện thoại hợp lệ', validate: val => /^\d{10,}$/.test(val) },
+            { id: 'gender', required: false, message: 'Vui lòng nhập giới tính', validate: val => !val || val.trim().length > 0 },
+            { id: 'email', required: true, message: 'Vui lòng nhập email hợp lệ', validate: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) },
+            { id: 'password', required: true, message: 'Mật khẩu phải có ít nhất 6 ký tự', validate: val => val.length >= 6 },
+            { id: 'repassword', required: true, message: 'Mật khẩu nhập lại không khớp', validate: (val, form) => val === form.find('#password').val() }
+        ];
+        
+        fields.forEach(field => {
+            const value = $(`#${field.id}`).val();
+            const isFieldValid = field.required ? field.validate(value, $(this)) : !value || field.validate(value, $(this));
+            
+            if (!isFieldValid) {
+                $(`#${field.id}`).addClass('is-invalid');
+                isValid = false;
+            }
+        });
+        
+        if (isValid) {
+            // Show success message for valid inputs
+            $('.alert-success').fadeIn();
+            
+            // Store email in localStorage for consistency with login page
+            localStorage.setItem('userEmail', $('#email').val());
+            
+            // Delay redirect to show success message
+            setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 2000); // 2-second delay
+        }
+    });
+});
+</script>
 </body>
 </html>
