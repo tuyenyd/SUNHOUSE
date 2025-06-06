@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="../css/sunhouse.css">
+     <style>
+    .text-orange {
+        color:  #0d7182;
+    }
+    
+    .border-orange {
+        border-color:  #0d7182 !important;
+    }
+    
+    .bg-orange {
+        background-color:  red;
+    }
+    
+    .badge {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .badge {
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+        }
+    }
+    
+         .registration-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0d7182;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0d7182;
+            font-size: 18px;
+            border-bottom: 2px solid #0d7182;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group label:after {
+            content: " *";
+            color: #0d7182;
+        }
+        .form-group.optional label:after {
+            content: "";
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        .divider {
+            border-top: 1px solid #ddd;
+            margin: 30px 0;
+        }
+        .login-link {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+        .login-link a {
+            color: #0d7182;
+            text-decoration: none;
+        }
+        .register-btn {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #0d7182;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+        .register-btn:hover {
+            background-color: #b82218;
+        }
+</style>
+</head>
+<body>
+ <!-- Header -->
+   <header class="sunhouse-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <nav class="main-nav">
+                <div class="dropdown">
+                     <a href="home.html"><img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-01 145852.png" style="height: 60px;" alt="Sunhouse Logo"></a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="active">GIỚI THIỆU</a>
+                    <div class="dropdown-menu">
+                        <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                        <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                        <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                        <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                        <a href="gioithieu5.html">SUNHOUSE TV</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown products-dropdown">
+                    <a href="#">SẢN PHẨM</a>
+                    <div class="dropdown-menu">
+                        <div class="menu-columns">
+                            <div class="menu-column">
+                                <h4>DANH MỤC SẢN PHẨM</h4>
+                                <a href="#">Đồ gia dụng</a>
+                                <a href="#">Điện gia dụng</a>
+                                <a href="#">Điện tử Điện lạnh</a>
+                                <a href="#">Thiết bị nhà bếp</a>
+                                <a href="#">Đồ dùng nhà bếp</a>
+                                <a href="#">Tủ nhựa</a>
+                                <a href="#">Thiết bị âm thanh</a>
+                                <a href="#">Điện dân dụng</a>
+                                <a href="#">Thiết bị điện công nghiệp</a>
+                                <a href="#">Dây cáp điện</a>
+                            </div>
+                            
+                            <div class="menu-column">
+                                <h4>NỔI BẬT</h4>
+                                <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                <a href="#">Bộ nồi Anod</a>
+                                <a href="#">Chảo inox</a>
+                                <a href="#">Bộ nồi inox</a>
+                                <a href="#">Chảo chống dính</a>
+                                <a href="#">Nồi nhôm</a>
+                                <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+                <a href="#">XUẤT KHẨU</a>
+                <a href="#">BẢO HÀNH</a>               
+            </nav>
+        </div>
+        <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+        <div class="header-actions">
+            
+            <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+            <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+            <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+            <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+             <div class="dropdown">
+                <a href="#" class="action-link"><i class="fas fa-user"></i> TÀI KHOẢN</a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="dangnhap.html"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                    <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+  <div class="container py-5">
+    <!-- Tiêu đề và ngày tháng -->
+    <div class="mb-4">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Trang chủ</li>
+                <li class="breadcrumb-item active" aria-current="page">Đăng ký tài khoản</li>
+            </ol>
+        </nav>
+    </div>
+    </div>
+ <div class="registration-container" style="margin-bottom: 100px;">
+        <h1>Đăng ký thành viên</h1>
+        
+        <div class="form-section">
+            <h2>Thông tin công ty/Nhà phân phối/Đại lý</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="company-name">Tên</label>
+                    <input type="text" id="company-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" id="address" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Điện thoại</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group optional">
+                    <label for="establish-date">Ngày thành lập</label>
+                    <input type="date" id="establish-date">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group optional">
+                    <label for="business-field">Lĩnh vực kinh doanh</label>
+                    <input type="text" id="business-field">
+                </div>
+                <div class="form-group optional">
+                    <label for="tax-code">Mã số thuế</label>
+                    <input type="text" id="tax-code">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group optional">
+                    <label for="director">Họ tên giám đốc</label>
+                    <input type="text" id="director">
+                </div>
+                <div class="form-group">
+                    <label for="content">Nội dung mong muốn</label>
+                    <input type="text" id="content" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="form-section">
+            <h2>Thông tin người phụ trách</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="person-name">Tên</label>
+                    <input type="text" id="person-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="person-phone">Điện thoại</label>
+                    <input type="tel" id="person-phone" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group optional">
+                    <label for="gender">Giới tính</label>
+                    <input type="text" id="gender">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="repassword">Nhập lại mật khẩu</label>
+                    <input type="password" id="repassword" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="login-link">
+            Đã là thành viên? <a href="dangnhap.html">Đăng nhập tại đây</a>
+        </div>
+        
+        <button type="submit" class="register-btn">ĐĂNG KÝ NGAY</button>
+    </div>
+ <!-- Footer -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Cột SẢN PHẨM -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">SẢN PHẨM</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Máy lọc nước</a></li>
+                        <li><a href="#">Đồ gia dụng</a></li>
+                        <li><a href="#">Điện gia dụng</a></li>
+                        <li><a href="#">Thiết bị nhà bếp</a></li>
+                        <li><a href="#">Điện tử Điện lạnh</a></li>
+                        <li><a href="#">Điện dân dụng</a></li>
+                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột VỀ SUNHOUSE -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích giải thưởng</a></li>
+                        <li><a href="#">SUNHOUSE TV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột TIN TỨC & SỰ KIỆN -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                        <li><a href="#">Tin thưởng thức</a></li>
+                        <li><a href="#">Khuyến mại HOT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                        <li><a href="#">Địa điểm bán hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Thông tin liên hệ -->
+                <div class="col-md-3 mb-3">
+                    <h6 class="footer-title">ĐỊA CHỈ</h6>
+                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <h6 class="footer-title">ĐIỆN THOẠI</h6>
+                    <p>Văn phòng tập đoàn:<br>
+                    024.37396676 / 024.37396666<br>
+                    Tổng đài CSKH: 1800 6680</p>
+                </div>
+                 <div class="col-md-3 mb-3">
+                    <h6 class="footer-title">EMAIL</h6>
+                    <p>Email: info@sunhouse.com.vn</p>
+                </div>
+                 <div class="col-md-3 mb-3">
+                    <h6 class="footer-title">WEBSITE</h6>
+                    <p>Website: www.sunhouse.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
