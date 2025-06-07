@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tủ nhựa SUNHOUSE</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/sunhouse.css">
+    <style>
+        :root {
+            --sunhouse-orange: #0d7182;
+            --sunhouse-dark: #333;
+            --sunhouse-light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--sunhouse-dark);
+            line-height: 1.7;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--sunhouse-orange) !important;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.75rem 0;
+        }
+        
+        .breadcrumb-item.active {
+            color: black;
+
+        }
+        
+        .page-title {
+            color: var(--sunhouse-orange);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sunhouse-orange);
+        }
+        
+        .date-text {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+      
+        
+        .section-title {
+            color: var(--sunhouse-orange);
+            font-weight: 600;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--sunhouse-orange);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--sunhouse-orange);
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--sunhouse-orange);
+        }
+        
+        .value-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border-top: 3px solid var(--sunhouse-orange);
+        }
+        
+        .value-title {
+            font-weight: 600;
+            color: var(--sunhouse-orange);
+            margin-bottom: 0.75rem;
+        }
+        
+        .goal-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .goal-item:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sunhouse-orange);
+            font-weight: bold;
+        }
+    
+        
+        .distribution-item {
+            margin-bottom: 0.75rem;
+        }
+        
+        .distribution-number {
+            font-weight: 700;
+            color: var(--sunhouse-orange);
+        }
+         .text-orange {
+        color:  #0d7182;
+    }
+    
+    .value-card {
+        transition: none;
+    }
+    
+    .value-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .value-image {
+        transition: none;
+    }
+    
+    .value-card:hover .value-image {
+        transform: none;
+    }
+    
+    .card-body {
+        background-color: #fff;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+    
+    .card-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #0d7182;
+    }
+    
+    .card-text p {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1.05rem;
+    }
+    
+    /* Reset default margins and paddings */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-fluid {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .breadcrumb-container {
+        width: 100%;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .breadcrumb-content {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 30px;
+    }
+
+    .banner-section {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .story-section {
+        background: #e6f4f6;
+        padding: 40px 0;
+        position: relative;
+    }
+
+    .story-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        position: relative;
+    }
+
+    .story-main-title {
+        text-align: center;
+        color: #0d7182;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .quote-text {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .story-content {
+        line-height: 1.8;
+        color: #333;
+        position: relative;
+        overflow: hidden;
+        height: 120px;
+        transition: all 0.5s ease;
+    }
+
+    .story-content.hideContent:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(rgba(255, 255, 255, 0), #e6f4f6);
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+    }
+
+    .story-content.show {
+        height: auto;
+    }
+
+    .story-content.show:after {
+        opacity: 0;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .show-more {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #0d7182;
+        text-decoration: none;
+        font-weight: 500;
+        gap: 8px;
+        cursor: pointer;
+        padding: 10px 30px;
+        border-radius: 25px;
+        background: #fff;
+        border: 2px solid #0d7182;
+        transition: all 0.3s ease;
+    }
+
+    .show-more:hover {
+        background: #0d7182;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .banner-section {
+            height: 400px;
+        }
+
+        .story-section {
+            padding: 30px 0;
+        }
+
+        .story-container {
+            padding: 0 15px;
+        }
+
+        .story-main-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .quote-text {
+            font-size: 16px;
+        }
+    }
+
+    .breadcrumb-container {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .breadcrumb-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 30px;
+    }
+
+    .breadcrumb {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    .breadcrumb-item {
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+        color: #0d7182;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .breadcrumb-item a:hover {
+        color: #0a5a68;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+        color: #6c757d;
+        padding: 0 8px;
+    }
+
+    .breadcrumb-item.active {
+        color: #495057;
+    }
+
+    @media (max-width: 768px) {
+        .breadcrumb-content {
+            padding: 8px 15px;
+        }
+
+        .breadcrumb-item {
+            font-size: 13px;
+        }
+    }
+
+    .products-section {
+        background: #ffffff;
+    }
+
+    .product-categories {
+        width: 100%;
+        min-height: 100vh;
+        background: #f5f5f5;
+        padding: 40px 0;
+    }
+
+    .products-title {
+        color: #0d7182;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .product-wrapper {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 100%;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .product-card1 {
+        margin-bottom: 15px;
+    }
+
+    .product-img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .product-text {
+        padding: 10px 0;
+    }
+
+    .product-text h4 {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+        height: 40px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color: #333;
+    }
+
+    .product-categories {
+        background: #f5f5f5;
+        padding: 40px 0;
+    }
+
+    .product-categories .product-wrapper {
+        background: #fff;
+        text-align: center;
+    }
+
+    .product-categories .product-text {
+        padding: 15px 0;
+    }
+
+    .product-categories .product-text h4 {
+        font-size: 18px;
+        height: auto;
+        margin-bottom: 10px;
+        color: #0d7182;
+    }
+
+    .product-categories .product-text p {
+        color: #666;
+        margin: 0;
+    }
+
+    .rating {
+        color: #ffc107;
+        margin: 8px 0;
+    }
+
+    .review-count {
+        color: #666;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .price {
+        color: #0d7182;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    /* .product-card1:hover .product-img {
+        transform: none;
+    } */
+    .nav-link {
+            color: #6c757d;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+        .nav-link.active {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .section {
+            padding: 40px 0;
+            scroll-margin-top: 60px; /* Đảm bảo cuộn đúng vị trí sau header */
+        }
+        .review-section .rating {
+            font-size: 1.5rem;
+        }
+        .review-section .star {
+            cursor: pointer;
+            color: #ccc;
+        }
+        .review-section .star.filled {
+            color: #ffc107;
+        }
+        .search-bar {
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                   <div class="dropdown">
+                       <a href="home.html"><img src="c:\Users\admin\Pictures\Screenshots\Screenshot 2025-06-01 145852.png" style="height: 60px;" alt="Sunhouse Logo"></a>
+                    </div>
+                     <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="#">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="gioithieu5.html">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="#">Điện tử Điện lạnh</a>
+                                    <a href="#">Thiết bị nhà bếp</a>
+                                    <a href="#">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>
+                    
+                </nav>
+            </div>
+             <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+            <div class="header-actions">
+                
+                <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container-fluid p-0">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-container">
+            <div class="breadcrumb-content">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="home.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Tủ nhựa</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Hero Section with Story Overlay -->
+        <div class="banner-section">
+            <img src="https://sunhouse.com.vn/pic/product_catevideo/Banner-web-tu-nhua.jpg" alt="Tủ nhựa" class="banner-image">
+            
+            <div class="story-title">
+                <h2>CÂU CHUYỆN TỦ NHỰA SUNHOUSE</h2>
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <div class="story-section">
+            <div class="story-container">
+                <h1 class="story-main-title">CÂU CHUYỆN TỦ NHỰA SUNHOUSE</h1>
+                <div class="story-content hideContent">
+                    <div class="quote-text">TỦ NHỰA SUNHOUSE: XẾP GỌN MỌI HÀNH TRÌNH SỐNG</div>
+                    <div style="text-align:justify">
+                        Tủ nhựa vốn là giải pháp lưu trữ tiện ích, phù hợp với đông đảo người tiêu dùng Việt Nam bởi giá thành phải chăng, ít bị tác động bởi khí hậu nồm ẩm... Tuy nhiên, chỉ số rất ít tủ nhựa trên thị trường giải quyết được nhu cầu toàn diện và sâu sắc của người dùng khi lựa chọn sử dụng tủ nhựa. Có thể kể đến như:<br/><br/>
+
+                        ** Tính cơ động khi dịch chuyển nơi sống.<br/>
+                        ** Có thể tự lắp đặt và tháo rời theo nhu cầu từng giai đoạn.<br/>
+                        ** Thiết kế hòa hợp với không gian sống, công năng linh động.<br/>
+                        ** Đặc biệt là vật liệu minh bạch, an toàn cho sức khỏe.<br/><br/>
+
+                        Mong muốn phát triển giải pháp lưu trữ thông minh, an toàn, bền đẹp và phù hợp với người Việt Nam, SUNHOUSE lần đầu ra mắt dòng sản phẩm Tủ nhựa - giải pháp lưu trữ hoàn toàn mới. SUNHOUSE sở hữu và vận hành dây chuyền sản xuất nhựa được đầu tư 5 triệu USD (gần 120 tỷ VND), trang bị hệ thống robot, máy ép nhựa, máy in 3D, máy cắt CNC... được chuyển giao trực tiếp từ Hàn Quốc. Chất liệu nhựa được SUNHOUSE chọn lọc từ các tập đoàn uy tín như Kumho Petrochemical, Lotte (Hàn Quốc), Sabic (Ả Rập Xê Út),... đảm bảo yêu cầu khắt khe về độ an toàn và chất lượng.<br/><br/>
+
+                        Tủ nhựa SUNHOUSE gồm 24 models được nghiên cứu, thiết kế và sản xuất bởi SUNHOUSE với đa dạng kích thước và công năng. Tủ nhựa SUNHOUSE giúp bạn sắp xếp tổ ấm ngăn nắp theo ý muốn, với 4 dòng sản phẩm chính:<br/><br/>
+
+                        1. Tủ nhựa sơ sinh<br/><br/>
+                        2. Tủ nhựa trẻ em<br/><br/>
+                        3. Tủ nhựa gia đình<br/><br/>
+                        4. Tủ giày<br/><br/>
+
+                        Qua đó, SUNHOUSE kỳ vọng đây sẽ là giải pháp lưu trữ đồng hành cùng bạn trên mọi hành trình sống, đáp ứng sát nhất với nhu cầu sử dụng trên mỗi hành trình. Các sản phẩm tủ nhựa SUNHOUSE đáp ứng mức độ cao các tiêu chí:<br/>
+                        * Làm từ nhựa cao cấp - An toàn cho sức khỏe.<br/>
+                        * Khớp liên kết thông minh, dễ tháo lắp.<br/>
+                        * Đa dạng công năng với ngăn treo, ngăn kéo tích hợp.<br/>
+                        * Dễ dàng xếp gọn, tiện lợi khi vận chuyển.<br/>
+                        * Kích thước và thiết kế đa dạng cho mọi nhu cầu lưu trữ.<br/>
+                        * Độ bền cao, chống cong vênh, không mối mọt.<br/>
+                        * Có thể tái chế, thân thiện với môi trường.
+                    </div>
+                </div>
+                <div class="button-container">
+                    <a href="javascript:void(0);" class="show-more">
+                        <span>Xem thêm</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                $('.show-more').click(function(e) {
+                    e.preventDefault();
+                    var content = $('.story-content');
+                    var link = $(this);
+                    
+                    content.toggleClass('show');
+                    
+                    if (content.hasClass('show')) {
+                        link.find('span').text('Thu gọn');
+                    } else {
+                        link.find('span').text('Xem thêm');
+                    }
+                });
+            });
+        </script>
+
+        <!-- Products Section -->
+        <section class="products-section py-5">
+            <div class="container">
+                <h2 class="products-title text-center mb-4">Sản phẩm mới</h2>
+                <div class="row g-4">
+                    <!-- Product 1 -->
+                    <div class="col-md-3">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm2canh.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/Avatar(122).jpg" class="product-img" alt="TỦ NHỰA TRẺ EM 2 CÁNH HAPPY KIDS SUNHOUSE KS-380-2">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>TỦ NHỰA TRẺ EM 2 CÁNH HAPPY KIDS SUNHOUSE KS-380-2</h4>
+                                        <div class="rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="review-count">(379 đánh giá)</span>
+                                        </div>
+                                        <div class="price">990.000 VNĐ</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="col-md-3">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm2canh.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/Avatar(123).jpg" class="product-img" alt="TỦ NHỰA TRẺ EM 2 CÁNH HAPPY KIDS SUNHOUSE KS-380-2">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>TỦ NHỰA TRẺ EM 2 CÁNH HAPPY KIDS SUNHOUSE KS-380-2</h4>
+                                        <div class="rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="review-count">(379 đánh giá)</span>
+                                        </div>
+                                        <div class="price">990.000 VNĐ</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="col-md-3">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm2canh.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/Avatar(24).jpg" class="product-img" alt="TỦ NHỰA SƠ SINH 4 NGĂN HAPPY BABY SUNHOUSE KS-380-2">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>TỦ NHỰA SƠ SINH 4 NGĂN HAPPY BABY SUNHOUSE KS-380-2</h4>
+                                        <div class="rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="review-count">(379 đánh giá)</span>
+                                        </div>
+                                        <div class="price">990.000 VNĐ</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="col-md-3">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm2canh.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/Avatar(23).jpg" class="product-img" alt="TỦ NHỰA SƠ SINH 4 NGĂN HAPPY BABY SUNHOUSE KS-380-2">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>TỦ NHỰA SƠ SINH 4 NGĂN HAPPY BABY SUNHOUSE KS-380-2</h4>
+                                        <div class="rating">
+                                            <span class="stars">★★★★★</span>
+                                            <span class="review-count">(379 đánh giá)</span>
+                                        </div>
+                                        <div class="price">990.000 VNĐ</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="product-categories">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <!-- Tủ nhựa trẻ em -->
+                    <div class="col-md-6 mb-4">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/Kid.png" class="product-img" alt="Tủ nhựa trẻ em">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>Tủ nhựa trẻ em</h4>
+                                        <p>Con thêm tự lập, làm chủ không gian</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tủ nhựa sơ sinh -->
+                    <div class="col-md-6 mb-4">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/Baby.png" class="product-img" alt="Tủ nhựa sơ sinh">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>Tủ nhựa sơ sinh</h4>
+                                        <p>An toàn xếp gọn cả thế giới của con</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tủ nhựa gia đình -->
+                    <div class="col-md-6 mb-4">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/family.png" class="product-img" alt="Tủ nhựa gia đình">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>Tủ nhựa gia đình</h4>
+                                        <p>Tháo lắp linh hoạt - Gọn mọi không gian</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tủ giày -->
+                    <div class="col-md-6 mb-4">
+                        <div class="product-wrapper">
+                            <div class="product-info">
+                                <a href="tuNhuaTreEm.html" style="text-decoration: none; color: inherit;">
+                                    <div class="product-card1">
+                                        <img src="../image/tu-giay.png" class="product-img" alt="Tủ giày">
+                                    </div>
+                                    <div class="product-text">
+                                        <h4>Tủ giày</h4>
+                                        <p>Tháo lắp linh hoạt - Gọn mọi không gian</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="py-5 bg-light">
+            <div class="row g-4">
+                <!-- 24/7 Support -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-headset fa-3x text-primary"></i>
+                        </div>
+                        <h4>Trợ giúp 24/7</h4>
+                        <p>Đội ngũ hỗ trợ SUNHOUSE luôn sẵn sàng</p>
+                        <a href="#" class="btn btn-link">Xem thêm</a>
+                    </div>
+                </div>
+
+                <!-- Sales Points -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-store fa-3x text-primary"></i>
+                        </div>
+                        <h4>Điểm bán sản phẩm</h4>
+                        <p>Hệ thống đại lý trải khắp từ Bắc tới Nam và luôn còn hàng cho bạn mua sắm</p>
+                        <a href="#" class="btn btn-link">Xem thêm</a>
+                    </div>
+                </div>
+
+                <!-- Warranty Centers -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-tools fa-3x text-primary"></i>
+                        </div>
+                        <h4>Trung tâm bảo hành</h4>
+                        <p>Hơn 300 trung tâm Bảo hành trên toàn quốc</p>
+                        <a href="#" class="btn btn-link">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Cột SẢN PHẨM -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">SẢN PHẨM</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Máy lọc nước</a></li>
+                        <li><a href="#">Đồ gia dụng</a></li>
+                        <li><a href="#">Điện gia dụng</a></li>
+                        <li><a href="#">Thiết bị nhà bếp</a></li>
+                        <li><a href="#">Điện tử Điện lạnh</a></li>
+                        <li><a href="#">Điện dân dụng</a></li>
+                        <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột VỀ SUNHOUSE -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích giải thưởng</a></li>
+                        <li><a href="#">SUNHOUSE TV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột TIN TỨC & SỰ KIỆN -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                        <li><a href="#">Tin thưởng thức</a></li>
+                        <li><a href="#">Khuyến mại HOT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                        <li><a href="#">Địa điểm bán hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Thông tin liên hệ -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+                    <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                    Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+                    <p>Văn phòng tập đoàn:<br>
+                    024.37396676 / 024.37396666<br>
+                    Tổng đài CSKH: 1800 6680</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+                    <p>Email: info@sunhouse.com.vn<br>
+                    Website: www.sunhouse.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+   <!-- Bootstrap JS and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Xử lý cuộn đến section khi nhấp vào link
+            $('.nav-link').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 60 // Điều chỉnh để tránh che khuất bởi header
+                }, 500);
+                $('.nav-link').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Xử lý chọn sao
+            $('.star').on('click', function() {
+                const value = $(this).data('value');
+                $('#rating-value').val(value);
+                $('.star').removeClass('filled');
+                $(this).addClass('filled').prevAll('.star').addClass('filled');
+            });
+
+            // Xử lý gửi đánh giá
+            $('#submit-review').click(function() {
+                const name = $('#reviewer-name').val();
+                const content = $('#review-content').val();
+                const rating = $('#rating-value').val();
+                if (name && content.length >= 100 && rating > 0) {
+                    alert(`Cảm ơn ${name} đã gửi đánh giá với ${rating} sao!`);
+                    $('#reviewer-name').val('');
+                    $('#review-content').val('');
+                    $('#rating-value').val('0');
+                    $('.star').removeClass('filled');
+                } else {
+                    alert('Vui lòng nhập đầy đủ thông tin và đảm bảo nhận xét ít nhất 100 ký tự!');
+                }
+            });
+
+            // Xử lý tìm kiếm
+            $('#search-btn').click(function() {
+                const query = $('#search-input').val();
+                if (query) {
+                    alert(`Đang tìm kiếm: ${query}`);
+                } else {
+                    alert('Vui lòng nhập từ khóa tìm kiếm!');
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
