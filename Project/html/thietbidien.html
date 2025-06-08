@@ -11,18 +11,260 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
      <link rel="stylesheet" href="../css/sunhouse.css">
      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    >
      <script>
-        $(document).ready(function(){
-            $("#toggleBtn").click(function(){
-                $("#moreContent").toggle();
-            })
-        })
-     </script>
+            $(document).ready(function() {
+                $('.show-more').click(function(e) {
+                    e.preventDefault();
+                    var content = $('.story-content');
+                    var link = $(this);
+                    
+                    content.toggleClass('show');
+                    
+                    if (content.hasClass('show')) {
+                        link.find('span').text('Thu gọn');
+                    } else {
+                        link.find('span').text('Xem thêm');
+                    }
+                });
+            });
+        </script>
      <style>
         p {
             font-family: 'Roboto', sans-serif;
         }
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+      }
+      .breadcrumb-container {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .breadcrumb-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 30px;
+    }
+
+    .breadcrumb {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    .breadcrumb-item {
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+        color: #0d7182;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .breadcrumb-item a:hover {
+        color: #0a5a68;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+        color: #6c757d;
+        padding: 0 8px;
+    }
+
+    .breadcrumb-item.active {
+        color: #495057;
+    }
+
+    @media (max-width: 768px) {
+        .breadcrumb-content {
+            padding: 8px 15px;
+        }
+
+        .breadcrumb-item {
+            font-size: 13px;
+        }
+    }
+
+    .polygon-section {
+      position: relative;
+      width: 100vw;
+      background-color: white;
+      clip-path: polygon(0 150px, 50% 0, 100% 150px, 100% 100%, 0 100%);
+      padding: 200px 40px 40px;
+      margin-top: -300px;
+      z-index: 2;
+      transition: clip-path 0.4s ease;
+      
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .card-img-top {
+      width: 500px;
+      height: 500px;
+    }
+      
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .show-more {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #0d7182;
+        text-decoration: none;
+        font-weight: 500;
+        gap: 8px;
+        cursor: pointer;
+        padding: 10px 30px;
+        border-radius: 25px;
+        background: #fff;
+        border: 2px solid #0d7182;
+        transition: all 0.3s ease;
+    }
+
+    .show-more:hover {
+        background: #0d7182;
+        color: #fff;
+    }
+    /* Add these styles to the existing style section */
+        .service-feature {
+            background-color: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-feature .btn:hover {
+    background-color: #0d7182 !important;
+    border-color: #0d7182 !important;
+    color: white !important;
+}
+
+        .icon-bg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #dc3545;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon-bg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+
+        .service-title {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .sunhouse-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  flex-wrap: wrap;
+}
+
+.social-box {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.facebook-embed img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+.youtube-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffd3d3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #c00;
+}
+
+.youtube-icon {
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.email-subscribe {
+  display: flex;
+  margin-top: 10px;
+}
+
+.email-subscribe input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+
+.submit-btn {
+  background-color: #2a8ba0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.distributor-section {
+  background-image: url(/Project/image/detail-Sunhouse.jpg);
+}
+
+        
      </style>
+     
 </head>
 <body>
   <!-- Header -->
@@ -99,6 +341,18 @@
     </div>
 </header>
 
+<!-- Breadcrumb -->
+        <div class="breadcrumb-container">
+            <div class="breadcrumb-content">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="home.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Thiết bị điện công nghiệp </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
     <!-- Banner -->
     <div class="banner">
         <img src="/Project/image/bannerThietbidien.jpg" alt="" width="100%">
@@ -106,7 +360,8 @@
 
     <section class="py-5 bg-light text-center">
     <div class="container">
-        <h2 class="fw-bold text-primary mb-4">Câu chuyện SUNHOUSE</h2>
+      <div class="polygon-section" id="polygonSection">
+          <h2 class="fw-bold text-primary mb-4">Câu chuyện SUNHOUSE</h2>
 
         <!-- Icon dấu ngoặc kép -->
         <div class="mb-3">
@@ -127,7 +382,7 @@
         </p>
 
         <!-- Nội dung ẩn -->
-        <div id="moreContent" class="collapse text-start mt-4 px-3s">
+        <div class="story-content hideContent collapse text-center mt-4 px-3">
         <p>
             Với dây chuyền ứng dụng công nghệ hiện đại (đạt tiêu chuẩn ISO 9001:2008 do tổ chức DAS chứng nhận), sản phẩm của SUNHOUSE được tạo ra với chất lượng cao cùng giá thành hợp lý nhất. 
             Không những thế, để đảm bảo tính an toàn khi thi công lắp đặt và sử dụng, tất cả các sản phẩm đều được kiểm định nghiêm ngặt trước khi đưa ra thị trường.
@@ -145,9 +400,13 @@
         </div>
 
         <!-- Nút xem thêm / thu gọn -->
-        <button id="toggleBtn" class="btn btn-outline-primary mt-3 px-4" data-bs-toggle="collapse" data-bs-target="#moreContent">
-        Xem thêm &rarr;
-        </button>
+        <div class="button-container">
+                    <a href="javascript:void(0);" class="show-more">
+                        <span>Xem thêm</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+      </div>
     </div>
     </section>
 
@@ -251,6 +510,114 @@
       </div>
     </div>
   </section>
+
+  <!-- Support Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- 24/7 Support -->
+                    <div class="col-md-4">
+                        <div class="service-feature text-center p-4">
+                            <div class="service-icon mb-3">
+                                <div class="icon-bg bg-danger text-white">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                            </div>
+                            <h4 class="service-title mb-3">Trợ giúp 24/7</h4>
+                            <p class="service-desc mb-3">Đội ngũ hỗ trợ SUNHOUSE luôn sẵn sàng</p>
+                            <a href="#" class="btn btn-outline-secondary rounded-pill px-4">
+                                Xem thêm <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sales Points -->
+                    <div class="col-md-4">
+                        <div class="service-feature text-center p-4">
+                            <div class="service-icon mb-3">
+                                <div class="icon-bg bg-danger text-white">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                            </div>
+                            <h4 class="service-title mb-3">Điểm bán sản phẩm</h4>
+                            <p class="service-desc mb-3">Hệ thống đại lý trải khắp từ Bắc tới Nam và luôn còn hàng cho bạn mua sắm</p>
+                            <a href="#" class="btn btn-outline-secondary rounded-pill px-4">
+                                Xem thêm <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Warranty Centers -->
+                    <div class="col-md-4">
+                        <div class="service-feature text-center p-4">
+                            <div class="service-icon mb-3">
+                                <div class="icon-bg bg-danger text-white">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                            </div>
+                            <h4 class="service-title mb-3">Trung tâm bảo hành</h4>
+                            <p class="service-desc mb-3">Hơn 300 trung tâm Bảo hành trên toàn quốc</p>
+                            <a href="#" class="btn btn-outline-secondary rounded-pill px-4">
+                                Xem thêm <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="distributor-section">
+      <div class="container distributor-overlay">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-white">
+            <h2 class="fw-bold">Dành cho nhà phân phối/đại lý</h2>
+            <p>
+              SUNHOUSE luôn có những chính sách tốt nhất dành cho nhà phân
+              phối/đại lý của mình. Nếu bạn chưa là nhà phân phối/đại lý của
+              SUNHOUSE hãy đăng ký ngay hôm nay.
+            </p>
+            <a href="#" class="btn btn-outline-light">
+              Xem thêm <i class="bi bi-chevron-right"></i>
+            </a>
+          </div>
+          <div class="col-md-6 text-center mt-4 mt-md-0">
+            <img
+              src="../image/dogiadung/phanphoi.png"
+              alt="Thông tin đại lý"
+              class="partner-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <section class="lienhe">
+          <div class="sunhouse-wrapper">
+  <div class="social-box">
+    <p>Like và truy cập SUNHOUSE để cập nhật chương trình khuyến mại và tin tức sớm nhất</p>
+    <div class="facebook-embed">
+      <img src="/Project/image/FaceBook_SunHouse.JPG" alt="Sunhouse Facebook">
+    </div>
+  </div>
+
+  <div class="social-box">
+    <p>Cùng SUNHOUSE xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
+    <div class="youtube-box">
+      <div class="youtube-icon">▶</div>
+      <span>SUNHOUSE TV: 186k subscribe</span>
+    </div>
+  </div>
+
+  <div class="social-box">
+    <p>Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
+    <div class="email-subscribe">
+      <input type="email" placeholder="Nhập email của bạn">
+      <button class="submit-btn">📩</button>
+    </div>
+  </div>
+</div>
+        </section>
+        
 
   <!-- Footer -->
     <footer class="footer pt-5 pb-4">
