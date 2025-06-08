@@ -18,6 +18,70 @@
     body {
       font-family: 'Roboto', sans-serif;
     }
+    .content-wrapper {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 Aspect Ratio */
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .py-12 {
+      background-color: #d92329;
+      padding-bottom: 20px;
+    }
+
+    .information {
+      background-image: url(/Project/image/daycapdien/banner3.jpg);
+      padding-top: 10px;
+      padding-bottom: 10px ;
+    }
+    .carousel-inner {
+      display: flex;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item > .row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: black;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .image-hover-zoom {
+      transition: transform 0.3s ease;
+    }
+
+    .image-hover-zoom:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 
@@ -99,7 +163,7 @@
   <!-- Slider Banner -->
   <section class="relative">
     <div class="overflow-hidden">
-      <img src="/Project/image/bannerDaycapdien.JPG" class="w-full object-cover max-h-[600px]" alt="Banner">
+      <img src="/Project/image/daycapdien/bannerDaycapdien.JPG" class="w-full object-cover max-h-[600px]" alt="Banner">
     </div>
   </section>
 
@@ -113,32 +177,117 @@
     </div>
   </section>
 
+  <!--Video+GioiThieu-->
+  <section class="Video-gioithieu">
+    <div class="container my-5">
+      <div class="row content-wrapper">
+        <!-- Left Column (Text) -->
+        <div class="col-md-6">
+          <p><strong>SUNHOUSE OVI CABLES</strong>, thuộc tập đoàn <strong>SUNHOUSE GROUP</strong>, là thương vụ M&A thành công giữa tập đoàn <strong>SUNHOUSE</strong> và công ty dây cáp điện hàng đầu Malaysia – Olympic Cable, công ty đi đầu trong lĩnh vực sản xuất và kinh doanh các loại dây điện, cáp điện dân dụng, điện công nghiệp.</p>
+
+          <p>Sản phẩm của <strong>SUNHOUSE OVI CABLES</strong> có nguyên liệu sạch được nhập khẩu trực tiếp từ nước ngoài với 100% ĐỒNG NGUYÊN CHẤT. Hệ thống dây chuyền, thiết bị hiện đại được đầu tư đồng bộ theo phương thức chuyển giao công nghệ từ công ty cáp Olympic Malaysia và được kiểm soát chặt chất lượng, quản lý vận hành bởi đội ngũ chuyên gia người Malaysia có trình độ cao, giàu kinh nghiệm.</p>
+
+          <p>Sản phẩm của <strong>SUNHOUSE OVI CABLES</strong> đã có mặt ở hầu hết các công trình, dự án, khu công nghiệp lớn như Landmark81, Times City, Nhà máy TOTO, Nhà máy DETMOLD…</p>
+        </div>
+
+        <!-- Right Column (Video) -->
+        <div class="col-md-6">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/L-riklbzjp0" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
   <!-- Slider Banner 2 -->
   <section class="relative">
     <div class="overflow-hidden">
-      <img src="/Project/image/daycapdien-tt.JPG" class="w-full object-cover max-h-[600px]" alt="Banner">
+      <img src="/Project/image/daycapdien/daycapdien-tt.JPG" class="w-full object-cover max-h-[600px]" alt="Banner">
     </div>
   </section>
 
   <!-- Danh mục sản phẩm -->
   <section class="py-12">
     <div class="max-w-7xl mx-auto px-4">
-      <h3 class="text-xl font-semibold mb-6">Danh mục sản phẩm</h3>
+      <h3 class="text-xl text-white font-semibold mb-6">Danh mục sản phẩm</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 text-center">
-          <img src="https://ovicables.sunhouse.com.vn/assets/images/product/product1.jpg" alt="SP1" class="w-full h-40 object-contain mb-3">
-          <h4 class="font-medium">Dây điện dân dụng</h4>
+          <img src="/Project/image/daycapdien/anh1.JPG" alt="SP1" class="w-full h-40 object-contain mb-3 image-hover-zoom">
+          <h4 class="font-medium">Cáp chống cháy</h4>
         </div>
         <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 text-center">
-          <img src="https://ovicables.sunhouse.com.vn/assets/images/product/product2.jpg" alt="SP2" class="w-full h-40 object-contain mb-3">
-          <h4 class="font-medium">Cáp điện công nghiệp</h4>
+          <img src="/Project/image/daycapdien/anh2.JPG" alt="SP2" class="w-full h-40 object-contain mb-3 image-hover-zoom">
+          <h4 class="font-medium">Cáp chậm cháy</h4>
         </div>
         <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 text-center">
-          <img src="https://ovicables.sunhouse.com.vn/assets/images/product/product3.jpg" alt="SP3" class="w-full h-40 object-contain mb-3">
-          <h4 class="font-medium">Dây đơn mềm</h4>
+          <img src="/Project/image/daycapdien/anh3.JPG" alt="SP3" class="w-full h-40 object-contain mb-3 image-hover-zoom">
+          <h4 class="font-medium">Cáp trung thế</h4>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="information">
+      <div class="container text-center text-white mt-4">
+      <h2>VỀ NHÀ MÁY SUNHOUSE OVI CABLES</h2>
+
+      <div id="multiCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="/Project/image/daycapdien/maymoc1.jpg" class="d-block w-100" alt="Ảnh 1">
+              </div>
+              <div class="col-md-4">
+                <img src="/Project/image/daycapdien/maymoc2.jpg" class="d-block w-100" alt="Ảnh 2">
+              </div>
+              <div class="col-md-4">
+                <img src="/Project/image/daycapdien/maymoc3.jpg" class="d-block w-100" alt="Ảnh 3">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="/Project/image/daycapdien/maymoc4.jpeg" class="d-block w-100" alt="Ảnh 4">
+              </div>
+              <div class="col-md-4">
+                <img src="/Project/image/daycapdien/maymoc5.jpeg" class="d-block w-100" alt="Ảnh 5">
+              </div>
+              <div class="col-md-4">
+                <img src="/Project/image/daycapdien/maymoc6.jpeg" class="d-block w-100" alt="Ảnh 6">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#multiCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#multiCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="mt-4 px-4">
+        <p>
+          SUNHOUSE OVI CABLES được kế thừa kỹ thuật và phát triển những công nghệ sản xuất tiêu chuẩn quốc tế...
+          <br>Nhà máy SUNHOUSE OVI CABLES đạt công suất: <strong>8000 tấn/năm</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner4">
+    <img src="/Project/image/daycapdien/banner4.JPG" alt="Banner4" width="100%">
   </section>
 
   <!-- Footer -->
