@@ -1,0 +1,227 @@
+p {
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .breadcrumb-container {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .breadcrumb-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 30px;
+    }
+
+    .breadcrumb {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    .breadcrumb-item {
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+        color: #0d7182;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .breadcrumb-item a:hover {
+        color: #0a5a68;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+        color: #6c757d;
+        padding: 0 8px;
+    }
+
+    .breadcrumb-item.active {
+        color: #495057;
+    }
+
+    @media (max-width: 768px) {
+        .breadcrumb-content {
+            padding: 8px 15px;
+        }
+
+        .breadcrumb-item {
+            font-size: 13px;
+        }
+    }
+
+    .polygon-section {
+      position: relative;
+      width: 100vw;
+      background-color: white;
+      clip-path: polygon(0 150px, 50% 0, 100% 150px, 100% 100%, 0 100%);
+      padding: 200px 40px 40px;
+      margin-top: -300px;
+      z-index: 2;
+      transition: clip-path 0.4s ease;
+      
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .card-img-top {
+      width: 500px;
+      height: 500px;
+    }
+      
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .show-more {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #0d7182;
+        text-decoration: none;
+        font-weight: 500;
+        gap: 8px;
+        cursor: pointer;
+        padding: 10px 30px;
+        border-radius: 25px;
+        background: #fff;
+        border: 2px solid #0d7182;
+        transition: all 0.3s ease;
+    }
+
+    .show-more:hover {
+        background: #0d7182;
+        color: #fff;
+    }
+    /* Add these styles to the existing style section */
+        .service-feature {
+            background-color: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-feature .btn:hover {
+    background-color: #0d7182 !important;
+    border-color: #0d7182 !important;
+    color: white !important;
+}
+
+        .icon-bg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #dc3545;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon-bg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+
+        .service-title {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .sunhouse-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  flex-wrap: wrap;
+}
+
+.social-box {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.facebook-embed img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+.youtube-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffd3d3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #c00;
+}
+
+.youtube-icon {
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.email-subscribe {
+  display: flex;
+  margin-top: 10px;
+}
+
+.email-subscribe input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+
+.submit-btn {
+  background-color: #2a8ba0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.distributor-section {
+  background-image: url(/Project/image/detail-Sunhouse.jpg);
+}
