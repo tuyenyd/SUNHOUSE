@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Điện tử điện lạnh</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/sunhouse.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <link rel="stylesheet" href="../css/sunhouse.css">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+      }
+      .polygon-section {
+        background-color: #d2ebf1;
+        clip-path: polygon(0 150px, 50% 0, 100% 150px, 100% 100%, 0 100%);
+        padding: 200px 40px 40px; 
+        margin-top: -300px;       
+        position: relative;
+        z-index: 2;                
+        transition: clip-path 0.4s ease;
+      }
+      .banner img {
+        width: 100%;
+        display: block;
+        position: relative;
+        z-index: 1; /* banner nằm dưới polygon */
+      }
+      .content {
+        max-width: 1000px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .extra-content {
+        display: none;
+        margin-top: 20px;
+      }
+      .toggle-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 30px;
+
+      }
+      .tab{
+        padding: 10px 10px 10px 245px;
+      }
+      .tab a{
+        text-decoration: none;
+        font-size: 14px;
+        color: black;
+      }
+      .tab a:hover{
+        color:blue;
+      }
+      .product-carousel {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .product-card {
+        width: 240px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 10px;
+        scroll-snap-align: start;
+        background: #fff;
+        transition: transform 0.3s ease;
+        position: relative;
+        height: 400px;
+      }
+      .product-card img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: auto;   
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      .text-teal-700 {
+        color: #00797f;
+      }
+      .fw-bold a{
+        text-decoration: none;
+        color:black;
+      }
+      .product-card .text-primary {
+        position: absolute;
+        bottom: 20px;
+      }
+      .product-card .text-warning {
+        position: absolute;
+        bottom: 5px;
+      }
+      .product-section {
+        background-color: #cccdca;
+      }
+      .product-section img {
+        max-height: 250px;
+        object-fit: contain;
+      }
+      .border {
+        border: 1px solid #ddd;
+      }
+      .product-section a{
+        text-decoration: none;
+        color: black;
+      }
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+      .service-box {
+        text-align: center;
+        padding: 30px 20px;
+      } 
+      .service-box h5 {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .btn-outline-primary {
+        border-radius: 30px;
+        padding: 6px 20px;
+      }
+      .distributor-section {
+        background: url("your-background-image.jpg") no-repeat center
+          center/cover;
+        position: relative;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        color: white;
+        }
+      .distributor-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(0, 98, 110, 0.9),
+          rgba(0, 98, 110, 0.5),
+          transparent
+        );
+        width: 100%;
+        padding: 60px 20px;
+        }
+      .partner-image {
+        width: 300px;
+        height: auto;
+      }
+      .footer-section {
+        background: #f8f9fa;
+        padding: 50px 20px;
+      }
+      .footer-box {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .footer-box img {
+        max-width: 100%;
+        height: auto;
+      }
+      .email-input-group {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                    <div class="dropdown">
+                        <a href="home.html"><img src="https://sunhouse.com.vn/pic/banner/logo.png"  style="height: 60px;" alt="Sunhouse Logo"></a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="gioithieu5.html">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="dienTuDienLanh.html">Điện tử Điện lạnh</a>
+                                    <a href="thiBiNhaBep.html">Thiết bị nhà bếp</a>
+                                    <a href="doDungNhaBep.html">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>               
+                </nav>
+            </div>
+            <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+            <div class="header-actions">
+                
+                <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                <div class="dropdown">
+                    <a href="#" class="action-link"><i class="fas fa-user"></i> TÀI KHOẢN</a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="dangnhap.html"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                        <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <div class="tab bg-info-subtle">
+      <a href="home.html">Trang chủ</a>
+      <a href="dienTuDienLanh.html">/Điện tử điện lạnh</a>
+    </div>
+    <div class="banner">
+        <img src="https://sunhouse.com.vn/pic/product_catevideo/Banner-Web-DTDL.jpg" alt=" " class="tall">
+    </div>
+
+    <div class="polygon-section" id="polygonSection">
+      <div class="content text-center">
+        <h2 class="mb-4 text-center" style=" color: rgb(16, 146, 189);">Câu chuyện SUNHOUSE</h2>
+        <p>
+          Các sản phẩm Điện diện tử điện lạnh SUNHOUSE đang hiện diện trong hơn 20 triệu gia đình Việt,
+           đem lại giải pháp cho cuộc sống tiện nghi, hiện đại với thiết kế sang trọng, tính năng  thông 
+           minh, dễ dàng sử dụng, tiết kiệm năng lượng…
+        </p>
+        <div class="extra-content text-center" id="extraContent">
+            <p>
+                Danh mục sản phẩm thuộc ngành hàng Điện tử điện lạnh của SUNHOUSE vô cùng phong phú và đa dạng, 
+                đáp ứng toàn bộ nhu cầu của gia đình. Từ phòng khách, phòng ngủ đến nhà bếp, nhà tắm, SUNHOUSE 
+                hiện diện ở mọi không gian trong căn nhà, đem đến trải nghiệm sống tiện nghi nhất.
+            </p>
+            <p>
+                SUNHOUSE Điện tử điện lạnh hướng tới sự Tiện Dụng tối đa, giúp việc nội trợ trở nên dễ dàng và 
+                thú vị hơn rất nhiều (với các sản phẩm đa chức năng, hẹn giờ thông minh, cảm ứng điện tử...) 
+                Bên cạnh đó, yếu tố An Toàn cũng được đưa lên hàng đầu với các chất liệu siêu bền, chế độ bật/tắt 
+                thông minh, cảm ứng nhiệt/điện tự động…
+            </p>
+            
+            <p>
+                Không dừng lại ở đó, để đáp ứng yêu cầu ngày càng cao của người tiêu dùng cùng với sự phát triển 
+                của khoa học công nghệ trong cuộc sống, SUNHOUSE còn cho ra các bộ sản phẩm gia dụng nồi, chảo đáy 
+                từ với công nghệ ép thủy lực tiên tiến. Các sản phẩm Inox đáy từ của SUNHOUSE có nhiều ưu điểm vượt 
+                trội , chiếm được nhiều cảm tình của các bà nội trợ như:</p>
+            <p>
+                Liên tiếp nhiều năm, SUNHOUSE vinh dự nhận được những giải thưởng danh giá như “Tin & Dùng Việt Nam”, 
+                “Hàng Việt Nam chất lượng cao” hay “Thương hiệu mạnh Việt Nam”… Điều này là minh chứng rõ ràng cho sự 
+                tin tưởng của khách hàng với thương hiệu SUNHOUSE, cũng là nguồn động viên để SUNHOUSE không ngừng cải 
+                tiến công nghệ, nâng cao chất lượng sản phẩm.
+            </p>
+            <p>Quý khách có thể tham khảo tất cả các nhóm hàng Thiết bị điện công nghiệp của SUNHOUSE và mua ngay tại đây</p>
+        </div>
+        <button class="toggle-btn" id="toggleBtn">
+            Xem thêm >
+        </button>
+      </div>
+    </div>
+  <div class="container-fluid px-5 my-5">
+    <h2 class="text-center text-teal-700 font-bold mb-4"><a href="#" style="text-decoration: none;color: #00797f;">Sản phẩm mới</a></h2>
+    <div class="product-carousel d-flex overflow-auto gap-4 pb-3">
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/dieuhoa.png"  class=" W-100" alt="Điều hòa không khí một chiều SHR-AW12C120">        
+        <div class="mt-2 fw-bold"><a href="SPdieuhoa.html">ĐIỀU HÒA KHÔNG KHÍ MỘT CHIỀU INVERTER 9000BTU</a></div>
+        <div class="text-primary">Mã: SHR-AW09IC650</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/dieuhoa.png"  class=" W-100" alt="Điều hòa không khí một chiều SHR-AW12IC650">        
+
+        <div class="mt-2 fw-bold"><a href="SPdieuhoa.html">ĐIỀU HÒA KHÔNG KHÍ MỘT CHIỀU INVERTER 12000BTU</a></div>
+        <div class="text-primary">Mã: SHR-AW12IC650</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/dieuhoa.png"  class=" W-100" alt="Điều hòa không khí một chiều SHR-AW18IC650">        
+        <div class="mt-2 fw-bold"><a href="SPdieuhoa.html">ĐIỀU HÒA KHÔNG KHÍ MỘT CHIỀU INVERTER 18000BTU</a></div>
+        <div class="text-primary">Mã: SHR-AW18IC650</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/mayloc.png" class="w-100" alt="MÁY LỌC NƯỚC SHA76658SH">
+        <div class="mt-2 fw-bold"><a href="Spmayloc.html">MÁY LỌC NƯỚC RO UltraX SUNHOUSE 11 LÕI SHA76658SH</a></div>
+        <div class="text-primary">Mã: SHA76658SH</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/mayloc.png" class="w-100" alt="MÁY LỌC NƯỚC SHA76688SH">
+        <div class="mt-2 fw-bold"><a href="Spmayloc.html">MÁY LỌC NƯỚC RO UltraX SUNHOUSE 11 LÕI SHA76688SH</a></div>
+        <div class="text-primary">Mã: SHA76688SH</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/mayloc.png" class="w-100" alt="MÁY LỌC NƯỚC SHA76668SH">
+        <div class="mt-2 fw-bold"><a href="Spmayloc.html">MÁY LỌC NƯỚC RO UltraX SUNHOUSE 11 LÕI SHA76668SH</a></div>
+        <div class="text-primary">Mã: SHA76668SH</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/mayloc2.png" class="w-100" alt="MÁY LỌC NƯỚC SHA76601S">
+        <div class="mt-2 fw-bold"><a href="Spmayloc.html">MÁY LỌC NƯỚC RO UltraX SUNHOUSE 11 LÕI SHA76601S</a></div>
+        <div class="text-primary">Mã: SHA76601S</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/mayloc3.png" class="w-100" alt="MÁY LỌC NƯỚC SHA76623KL">
+        <div class="mt-2 fw-bold"><a href="Spmayloc.html">MÁY LỌC NƯỚC RO UltraPURE SUNHOUSE 11 LÕI SHA76623KL</a></div>
+        <div class="text-primary">Mã: SHA76623KL</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/mayloc4.png" class="w-100" alt="MÁY LỌC NƯỚC SHA76621KL">
+        <div class="mt-2 fw-bold"><a href="Spmayloc.html">Máy lọc nước RO UltraPURE SUNHOUSE 10 LÕI SHA76621KL</a></div>
+        <div class="text-primary">Mã: SHA76621KL</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      <div class="product-card flex-shrink-0">
+        <img src="../image/dienTuDienLanh/mayloc5.png" class="w-100" alt="MÁY LỌC NƯỚC SHA76210KL">
+        <div class="mt-2 fw-bold"><a href="Spmayloc.html">MÁY LỌC NƯỚC RO UltraPURE SUNHOUSE 10 LÕI SHA76210KL</a></div>
+        <div class="text-primary">Mã: SHA76210KL</div>
+        <div class="text-warning">★★★★★ <span class="text-muted">1 đánh giá</span></div>
+      </div>
+      
+    </div>
+    <div class="text-center mt-3" style="padding: 5px; margin: 5px;">
+      <button class="btn btn-outline-secondary me-2" onclick="scrollCarousel(-1)">◀</button>
+      <button class="btn btn-outline-secondary" onclick="scrollCarousel(1)">▶</button>
+    </div>
+  </div>
+  <section class="product-section py-5" style="background-color: rgb(235, 233, 233);">
+    <div class="container-fluid px-5">
+      <div class="row">
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/dieuhoakhongkhi.png" alt="Ultra Titanium" class="img-fluid mb-3"  >
+            <h4 class="fw-bold">Điều hòa không khí</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/mayhutam.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Máy hút ẩm</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/maylocnuoc.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Máy lọc nước gia đình</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/quatdieuhoa.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Máy làm mát không khí - Quạt điều hòa</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/manglockhongkhi.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Màng lọc không khí</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/maylockhongkhi.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Máy lọc không khí</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/tudong.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Tủ đông</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/caynuocnonglanh.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Cây nước nóng lạnh</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/binhnuocnong.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Bình nước nóng</h4>
+          </a>
+        </div>
+        <div class="col-md-6 text-center border">
+          <a href="dieuHoaKhongKhi.html">
+            <img src="../image/dienTuDienLanh/loilocnuoc.png" alt="Ultra Titanium" class="img-fluid mb-3">
+            <h4 class="fw-bold ">Lõi lọc nước</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  <div class="container py-5">
+    <div class="row text-center">
+      <div class="col-md-4 service-box">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png"
+          alt="Trợ giúp 24/7"
+          class="service-icon mb-3 bg-danger p-3"/>
+        <h5>Trợ giúp 24/7</h5>
+        <p>Đội ngũ hỗ trợ SUNHOUSE luôn sẵn sàng</p>
+        <a href="#" class="btn btn-outline-primary">
+          Xem thêm <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+      <div class="col-md-4 service-box">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/535/535239.png"
+          alt="Điểm bán"
+          class="service-icon mb-3 bg-danger p-3"/>
+        <h5>Điểm bán sản phẩm</h5>
+        <p>
+          Hệ thống đại lý trải khắp từ Bắc tới Nam và luôn còn hàng cho bạn
+          mua sắm
+        </p>
+        <a href="#" class="btn btn-outline-primary">
+          Xem thêm <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+      <div class="col-md-4 service-box">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/535/535234.png"
+          alt="Trung tâm bảo hành"
+          class="service-icon mb-3 bg-danger p-3"/>
+        <h5>Trung tâm bảo hành</h5>
+        <p>Hơn 300 trung tâm Bảo hành trên toàn quốc</p>
+        <a href="#" class="btn btn-outline-primary">
+          Xem thêm <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <section class="distributor-section">
+    <div class="container distributor-overlay">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="fw-bold">Dành cho nhà phân phối/đại lý</h2>
+          <p>
+            SUNHOUSE luôn có những chính sách tốt nhất dành cho nhà phân
+            phối/đại lý của mình. Nếu bạn chưa là nhà phân phối/đại lý của
+            SUNHOUSE hãy đăng ký ngay hôm nay.
+          </p>
+          <a href="#" class="btn btn-outline-light">
+            Xem thêm <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="col-md-6 text-center mt-4 mt-md-0">
+          <img
+            src="../image/dienTuDienLanh/phanphoi.png"
+            alt="Thông tin đại lý"
+            class="partner-image"/>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="footer-section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 footer-box">
+          <h6>Like và theo dõi SUNHOUSE</h6>
+          <p>
+            <a href="#" class="btn btn-outline-dark btn-sm mt-2"
+              ><i class="bi bi-facebook"></i> Theo dõi Trang</a>
+          </p>
+        </div>
+        <div class="col-md-4 footer-box">
+          <h6>Cùng SUNHOUSE xem sản phẩm</h6>
+          <a href="#" class="btn btn-danger"
+            ><i class="bi bi-youtube"></i> SUNHOUSE TV: 186k subscribe</a>
+        </div>
+        <div class="col-md-4 footer-box">
+          <h6>Đăng ký nhận thông tin</h6>
+          <form class="email-input-group d-flex">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Nhập email của bạn"/>
+            <button type="submit" class="btn btn-primary ms-2">
+              <i class="bi bi-send-fill"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer pt-5 pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h5 class="footer-title">SẢN PHẨM</h5>
+          <ul class="footer-list">
+            <li><a href="#">Máy lọc nước</a></li>
+            <li><a href="#">Đồ gia dụng</a></li>
+            <li><a href="#">Điện gia dụng</a></li>
+            <li><a href="thiBiNhaBep.html">Thiết bị nhà bếp</a></li>
+            <li><a href="dienTuDienLanh.html">Điện tử Điện lạnh</a></li>
+            <li><a href="#">Điện dân dụng</a></li>
+            <li><a href="#">Thiết bị điện công nghiệp</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="footer-title">VỀ SUNHOUSE</h5>
+          <ul class="footer-list">
+            <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+            <li><a href="#">Cơ cấu tổ chức</a></li>
+            <li><a href="#">Thành tích giải thưởng</a></li>
+            <li><a href="#">SUNHOUSE TV</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+          <ul class="footer-list">
+            <li><a href="#">Tin hoạt động</a></li>
+            <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+            <li><a href="#">Tin thưởng thức</a></li>
+            <li><a href="#">Khuyến mại HOT</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+          <ul class="footer-list">
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+            <li><a href="#">Địa điểm bán hàng</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+          <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+          Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+          <p>Văn phòng tập đoàn:<br>
+          024.37396676 / 024.37396666<br>
+          Tổng đài CSKH: 1800 6680</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+          <p>Email: info@sunhouse.com.vn<br>
+          Website: www.sunhouse.com.vn</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $('#toggleBtn').click(function () {
+      $('#extraContent').slideToggle(400, function () {
+        const section = document.getElementById('polygonSection');
+        const height = section.offsetHeight;
+        const newClip = `polygon(0 150px, 50% 0, 100% 150px, 100% ${height}px, 0 ${height}px)`;
+        section.style.clipPath = newClip;
+        $('#toggleBtn').text(
+          $(this).is(':visible') ? 'Thu gọn >' : 'Xem thêm >'
+        );
+      });
+    });
+  </script>
+  
+  <script>
+    $("#toggle-btn").on("click", function () {
+      $("#them-noi-dung").slideToggle();
+      $(this).text(function (i, text) {
+        return text === "Xem thêm" ? "Thu gọn >" : "Xem thêm >";
+      });
+    });
+  </script>
+  <script>
+    function scrollCarousel(direction) {
+      const carousel = document.querySelector('.product-carousel');
+      const scrollAmount = 260; // chiều rộng sản phẩm + margin
+      carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+  </body>
+</html>

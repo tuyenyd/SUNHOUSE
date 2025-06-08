@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bếp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap & jQuery -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/sunhouse.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      .thumb-img {
+        height: 80px;
+        object-fit: cover;
+        cursor: pointer;
+        margin-right: 10px;
+        border: 2px solid transparent;
+      }
+      .thumb-img.active {
+        border-color: #dc3545;
+      }
+      .carousel-item img {
+        height: auto;
+      }
+      .thumbs-wrapper {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .tip a {
+        text-decoration: none;
+        color: #00797f;
+      }
+      .tab {
+        padding: 10px 10px 10px 245px;
+      }
+      .tab a {
+        text-decoration: none;
+        font-size: 14px;
+        color: black;
+      }
+      .tab a:hover {
+        color: blue;
+      }
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+      .service-box {
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .service-box h5 {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .footer-section {
+        background: #f8f9fa;
+        padding: 50px 20px;
+      }
+      .footer-box {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .footer-box img {
+        max-width: 100%;
+        height: auto;
+      }
+      .email-input-group {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+    <header class="sunhouse-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <nav class="main-nav">
+                    <div class="dropdown">
+                        <a href="home.html"><img src="https://sunhouse.com.vn/pic/banner/logo.png"  style="height: 60px;" alt="Sunhouse Logo"></a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="active">GIỚI THIỆU</a>
+                        <div class="dropdown-menu">
+                            <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                            <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                            <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                            <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                            <a href="gioithieu5.html">SUNHOUSE TV</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown products-dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="menu-columns">
+                                <div class="menu-column">
+                                    <h4>DANH MỤC SẢN PHẨM</h4>
+                                    <a href="#">Đồ gia dụng</a>
+                                    <a href="#">Điện gia dụng</a>
+                                    <a href="dienTuDienLanh.html">Điện tử Điện lạnh</a>
+                                    <a href="thiBiNhaBep.html">Thiết bị nhà bếp</a>
+                                    <a href="doDungNhaBep.html">Đồ dùng nhà bếp</a>
+                                    <a href="#">Tủ nhựa</a>
+                                    <a href="#">Thiết bị âm thanh</a>
+                                    <a href="#">Điện dân dụng</a>
+                                    <a href="#">Thiết bị điện công nghiệp</a>
+                                    <a href="#">Dây cáp điện</a>
+                                </div>
+                                
+                                <div class="menu-column">
+                                    <h4>NỔI BẬT</h4>
+                                    <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                    <a href="#">Bộ nồi Anod</a>
+                                    <a href="#">Chảo inox</a>
+                                    <a href="#">Bộ nồi inox</a>
+                                    <a href="#">Chảo chống dính</a>
+                                    <a href="#">Nồi nhôm</a>
+                                    <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                    <a href="#">XUẤT KHẨU</a>
+                    <a href="#">BẢO HÀNH</a>               
+                </nav>
+            </div>
+            <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+            <div class="header-actions">
+                
+                <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+                <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+                <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+                <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+                <div class="dropdown">
+                    <a href="#" class="action-link"><i class="fas fa-user"></i> TÀI KHOẢN</a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="dangnhap.html"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                        <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+  <div class="tab bg-info-subtle">
+    <a href="home.html">Trang chủ</a>
+    <a href="thiBiNhaBep.html">/Thiết bị nhà bếp</a>
+    <a href="spbep.html">/Bếp gas dương</a>
+    <a href="#">/BẾP GAS DƯƠNG KÍNH SUNHOUSE MAMA MMB33012-V</a>
+  </div>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row">
+        <!-- Hình ảnh sản phẩm -->
+        <div class="col-md-6">
+          <div
+            id="productCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../image/thietBiNhaBep/bep1.png" class="d-block w-60" alt="Ảnh 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="../image/thietBiNhaBep/bep2.png" class="d-block w-60" alt="Ảnh 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="../image/thietBiNhaBep/bep3.png" class="d-block w-60" alt="Ảnh 3" />
+              </div>
+            </div>
+            <!-- Nút điều hướng -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#productCarousel"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#productCarousel"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+
+          <!-- Ảnh nhỏ -->
+          <div class="thumbs-wrapper mt-3 d-flex">
+            <img
+              src="../image/thietBiNhaBep/bep1.png"
+              class="thumb-img active"
+              data-index="0"
+            />
+            <img src="../image/thietBiNhaBep/bep2.png" class="thumb-img" data-index="1" />
+            <img src="../image/thietBiNhaBep/bep3.png" class="thumb-img" data-index="2" />
+          </div>
+        </div>
+
+        <!-- Thông tin sản phẩm -->
+        <!-- Thông tin sản phẩm -->
+        <div class="col-md-6">
+          <h4 class="fw-bold">
+            BẾP GAS DƯƠNG KÍNH SUNHOUSE MAMA MMB33012-V
+          </h4>
+
+          <!-- Dòng phụ: Bình luận, lượt xem, đánh giá -->
+          <div class="mb-2 text-muted small">
+            <i class="bi bi-chat-left-text"></i> Bình luận: 0 &nbsp;
+            <i class="bi bi-eye"></i> Lượt xem: 65,828 &nbsp;
+            <span>
+              <i class="bi bi-star text-secondary"></i>
+              <i class="bi bi-star text-secondary"></i>
+              <i class="bi bi-star text-secondary"></i>
+              <i class="bi bi-star text-secondary"></i>
+              <i class="bi bi-star text-secondary"></i>
+              (0 đánh giá)
+            </span>
+            <button class="btn btn-sm btn-primary ms-2">Chia sẻ</button>
+          </div>
+
+          <p>
+            <strong>Mã:</strong> <span style="color: #00797f">MAMA MMB33012-V</span>
+          </p>
+          <h4>Đặc điểm nổi bật</h4>
+          <ul>
+            <li>
+              Hệ thống đánh lửa Magneto tạo tia lửa nhanh
+            </li>
+            <li>
+              Đầu đốt bằng đồng hạn chế mài mòn,
+            </li>
+            <li>
+              Lửa tỏa đều, tiết kiệm gas
+            </li>
+            <li>
+              Họng thép không gỉ, cho ngọn lửa xanh, không tạo muội đen
+            </li>
+          </ul>
+
+          <div class="d-flex gap-2 mt-3">
+            <button class="btn btn-outline-secondary">
+              So sánh
+            </button>            
+            <button class="btn btn-outline-secondary">
+              Mua ở đâu
+            </button>
+            <button class="btn btn-outline-secondary">
+              Kích hoạt bảo hành
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <div class="row">
+        <!-- Tabs trái -->
+        <div class="col-md-8">
+          <ul class="nav nav-tabs" id="productTabs" role="tablist">
+            <li class="nav-item">
+              <button
+                class="nav-link active"
+                data-bs-toggle="tab"
+                data-bs-target="#overview"
+              >
+                Tổng quan
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#reviews"
+              >
+                Thiết kế
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#media"
+              >
+                Công năng
+              </button>
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#media"
+              >
+                Đánh giá
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content p-4 border border-top-0 bg-white">
+            <!-- Tổng quan -->
+            <div class="tab-pane fade show active" style="text-align: justify;" id="overview">
+              <h5 class="fw-bold">Thông tin chi tiết sản phẩm</h5>
+              <p>
+                Bếp gas từ lâu đã trở thành thiết bị quen thuộc không thể thiếu trong căn bếp của mỗi gia đình Việt Nam. Tuy nhiên, sự đa dạng về kiểu dáng, loại hình và giá cả thường khiến người tiêu dùng phải đối mặt với nhiều khó khăn khi lựa chọn mua sắm.
+              </p>
+              <p>
+                Với mong muốn mang đến cho gia đình bạn bếp gas hoàn thiện nhất, Tập đoàn SUNHOUSE giới thiệu mẫu bếp gas dương SUNHOUSE MMB33012-V với giá trị vô cùng hợp lý, đảm bảo chất lượng bền bỉ, tiết kiệm gas và an toàn cho người sử dụng. Sản phẩm này không chỉ phù hợp với mọi không gian bếp mà còn là sự lựa chọn hàng đầu cho những người tiêu dùng thông thái!
+              </p>
+              <p>
+                KIỂU DÁNG SANG TRỌNG – HIỆN ĐẠI
+              </p>
+              <ul>
+                <li>
+                  Kiểu dáng sang trọng, mặt kính cường lực cao cấp
+                </li>
+              </ul>
+              <p>Bếp có thiết kế sang trọng, tối giản với bề mặt được làm từ inox cao cấp, chịu nhiệt tốt và chống han gỉ.</p>
+              <ul>
+                <li>
+                  Kiềng bằng thép tráng men, độc lập, siêu bền
+                </li>
+              </ul>
+              <p>
+                Kiềng bếp bằng gang siêu bền với 5 chân vững chắc, có thể tháo rời, tiện lợi cho việc vệ sinh. Xung quanh kiềng có thành cao bao quanh, giúp hạn chế tình trạng thất thoát nhiệt hoặc tác động từ bên ngoài trong quá trình nấu.
+              </p>
+              <ul>
+                <li>
+                  Đầu đốt bằng hợp kim đồng
+                </li>
+              </ul>
+                <p>
+                  Đầu đốt bằng hợp kim đồng, sơn đen chịu nhiệt cho ngọn lửa xanh, không đen đáy nồi, không sinh muội than, an toàn tiết kiệm nhiên liệu khi sử dụng. Với chất liệu hợp kim đồng đảm bảo đầu đốt không bị biến dạng bất chấp thời gian dài trong nhiệt độ lớn.  
+                </p>
+                <ul>
+                  <li>
+                    Núm vặn bật, tắt linh hoạt, chắc chắn.
+                  </li>
+                </ul>
+                <p>
+                  Sản phẩm có thiết kế núm vặn linh hoạt, nhạy bén, dễ dàng điều chình mức độ của nhiệt mà bạn mong muốn, không gây rò rỉ, hao hụt lãng phí gas.
+
+                </p>
+                <ul>
+                  <li>
+                    Hai vùng nấu tiện lợi
+
+                  </li>
+                </ul>
+                <p>
+                  SUNHOUSE MMB33012-V có 2 vùng nấu rộng rãi giúp bạn chế biến được nhiều món ăn cùng lúc. Bạn có thể vừa nấu canh, vừa chiên xào thực phẩm một cách thật thoải mái kể cả với các loại nồi chảo lớn.
+
+                </p>
+                <p>
+                  TIẾT KIỆM GAS – AN TOÀN SỬ DỤNG
+
+                </p>
+                <ul>
+                  <li>
+                    Hệ thống đánh lửa magneto, ngọn lửa xanh, cháy đều
+                  </li>
+                </ul>
+                <p>
+                  Bếp gas dương SUNHOUSE MMB33012-V sử dụng hệ thống đánh lửa cơ Magneto, bằng cách xuất hiện ra tia lửa điện, làm tia lửa phát ra kết hợp với khí gas tạo ra phản ứng cháy. Hệ thống đánh lửa Magneto điều khiển bằng núm vặn linh hoạt, bền bỉ, ít hỏng hóc và không cần thay pin như hệ thống IC.
+                </p>
+                <ul>
+                  <li>
+                    Hậu mãi hàng đầu – Bảo hành 18 tháng
+
+                  </li>
+                </ul>
+                <p>
+                  Sản phẩm Bếp gas dương SUNHOUSE MMB33012-V được áp dụng chế độ hậu mãi hàng đầu với mạng lưới bảo hành trên cả nước và nhân viên kĩ thuật chuyên nghiệp từ SUNHOUSE. Đặc biệt, thời gian bảo hành của sản phẩm là 18 tháng  giúp người dùng an tâm tuyệt đối về chất lượng và dịch vụ.
+
+
+                </p>
+              
+            </div>
+
+            <!-- Đánh giá -->
+            <div class="tab-pane fade" id="reviews">
+              <h5 class="fw-bold">Đánh giá từ người dùng</h5>
+              <div class="mb-3">
+                <span class="text-warning fs-4">★★★★☆</span>
+                <span class="text-muted">(4.0 / 5.0 - 23 đánh giá)</span>
+              </div>
+
+              <form>
+                <div class="mb-3">
+                  <label for="reviewText" class="form-label"
+                    >Nhận xét của bạn:</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="reviewText"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Đánh giá:</label><br />
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="rating"
+                      value="5"
+                      id="rate5"
+                    />
+                    <label class="form-check-label" for="rate5">5★</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="rating"
+                      value="5"
+                      id="rate5"
+                    />
+                    <label class="form-check-label" for="rate5">4★</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="rating"
+                      value="5"
+                      id="rate5"
+                    />
+                    <label class="form-check-label" for="rate5">3★</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="rating"
+                      value="5"
+                      id="rate5"
+                    />
+                    <label class="form-check-label" for="rate5">2★</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="rating"
+                      value="5"
+                      id="rate5"
+                    />
+                    <label class="form-check-label" for="rate5">1★</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Gửi đánh giá
+                </button>
+              </form>
+            </div>
+
+            <!-- Media -->
+            <div class="tab-pane fade" id="media">
+              <h5 class="fw-bold">Hình ảnh / Video mô tả</h5>
+              <div class="row g-3">
+                <div class="col">
+                  <div class="ratio ratio-16x9">
+                    <iframe
+                      src="https://www.youtube.com/embed/wa7XLZmENc8"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <img
+                    src="../image/mt1.jpg"
+                    class="img-fluid rounded mt-3"
+                    alt="Ảnh sản phẩm"
+                  />
+                  <img
+                    src="../image/mt2.jpg"
+                    class="img-fluid rounded mt-3"
+                    alt="Ảnh sản phẩm"
+                  />
+                  <img
+                    src="../image/mt3.png"
+                    class="img-fluid rounded mt-3"
+                    alt="Ảnh sản phẩm"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar phải -->
+        <div class="col-md-4">
+          <!-- Search box -->
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Tìm kiếm sản phẩm"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-secondary" type="submit">
+              <i class="bi bi-search"></i>
+              <!-- Dùng Bootstrap Icons -->
+            </button>
+          </form>
+
+          <!-- Khối mẹo vặt -->
+          <div class="border rounded p-3 bg-white">
+            <h5 class="fw-bold text-primary mb-4">Bí quyết - Mẹo vặt</h5>
+
+            <!-- Item 1 -->
+            <div class="d-flex mb-3">
+              <img
+                src="../image/dienTuDienLanh/m1.png"
+                class="me-3 rounded"
+                width="90"
+                height="70"
+                alt="Mẹo 1"
+              />
+              <div class="tip">
+                <a href="#"
+                  ><h6
+                    class="fw-bold mb-1 text-uppercase"
+                    style="font-size: 14px"
+                  >
+                    HƯỚNG DẪN SỬ DỤNG QUẠT SẠC SUNHOUSE SHD7228
+                  </h6></a
+                >
+                <small>Quạt sạc hay quạt tích điện là những vị...</small>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="d-flex mb-3">
+              <img
+                src="../image/dienTuDienLanh/m2.png"
+                class="me-3 rounded"
+                width="90"
+                height="70"
+                alt="Mẹo 2"
+              />
+              <div class="tip">
+                <a href="#"
+                  ><h6
+                    class="fw-bold mb-1 text-uppercase"
+                    style="font-size: 14px"
+                  >
+                    HƯỚNG DẪN TẠO LỚP CHỐNG DÍNH TỰ NHIÊN VỚI CHẢO INOX
+                  </h6></a
+                >
+                <small>Chảo inox ngày càng được nhiều gia đình...</small>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="d-flex mb-3">
+              <img
+                src="../image/dienTuDienLanh/m3.png"
+                class="me-3 rounded"
+                width="90"
+                height="70"
+                alt="Mẹo 3"
+              />
+              <div class="tip">
+                <a href="#"
+                  ><h6 class="fw-bold mb-1" style="font-size: 14px">
+                    Nên mua máy ép trái cây hay máy xay sinh tố?
+                  </h6></a
+                >
+                <small>Nên mua máy ép trái cây khi bạn có nhu cầu...</small>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="d-flex mb-3">
+              <img
+                src="../image/dienTuDienLanh/m4.png"
+                class="me-3 rounded"
+                width="90"
+                height="70"
+                alt="Mẹo 4"
+              />
+              <div class="tip">
+                <a href="#"
+                  ><h6 class="fw-bold mb-1" style="font-size: 14px">
+                    Cách vệ sinh nồi chiên không dầu mới mua
+                  </h6></a
+                >
+                <small
+                  >Xử lý nồi chiên không dầu mới mua về như thế nào...</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <div class="row text-center">
+        <div class="col-md-4 service-box">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png"
+            alt="Trợ giúp 24/7"
+            class="service-icon mb-3 bg-danger p-3"
+          />
+          <h5>Trợ giúp 24/7</h5>
+          <p>Đội ngũ hỗ trợ SUNHOUSE luôn sẵn sàng</p>
+          <a href="#" class="btn btn-outline-primary">
+            Xem thêm <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="col-md-4 service-box">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/535/535239.png"
+            alt="Điểm bán"
+            class="service-icon mb-3 bg-danger p-3"
+          />
+          <h5>Điểm bán sản phẩm</h5>
+          <p>
+            Hệ thống đại lý trải khắp từ Bắc tới Nam và luôn còn hàng cho bạn
+            mua sắm
+          </p>
+          <a href="#" class="btn btn-outline-primary">
+            Xem thêm <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="col-md-4 service-box">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/535/535234.png"
+            alt="Trung tâm bảo hành"
+            class="service-icon mb-3 bg-danger p-3"
+          />
+          <h5>Trung tâm bảo hành</h5>
+          <p>Hơn 300 trung tâm Bảo hành trên toàn quốc</p>
+          <a href="#" class="btn btn-outline-primary">
+            Xem thêm <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-4 footer-box">
+            <h6>Like và theo dõi SUNHOUSE</h6>
+            <p>
+              <a href="#" class="btn btn-outline-dark btn-sm mt-2"
+                ><i class="bi bi-facebook"></i> Theo dõi Trang</a
+              >
+            </p>
+          </div>
+          <div class="col-md-4 footer-box">
+            <h6>Cùng SUNHOUSE xem sản phẩm</h6>
+            <a href="#" class="btn btn-danger"
+              ><i class="bi bi-youtube"></i> SUNHOUSE TV: 186k subscribe</a
+            >
+          </div>
+          <div class="col-md-4 footer-box">
+            <h6>Đăng ký nhận thông tin</h6>
+            <form class="email-input-group d-flex">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Nhập email của bạn"
+              />
+              <button type="submit" class="btn btn-primary ms-2">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <!-- Cột SẢN PHẨM -->
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-title">SẢN PHẨM</h5>
+            <ul class="footer-list">
+              <li><a href="#">Máy lọc nước</a></li>
+              <li><a href="#">Đồ gia dụng</a></li>
+              <li><a href="#">Điện gia dụng</a></li>
+              <li><a href="#">Thiết bị nhà bếp</a></li>
+              <li><a href="#">Điện tử Điện lạnh</a></li>
+              <li><a href="#">Điện dân dụng</a></li>
+              <li><a href="#">Thiết bị điện công nghiệp</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột VỀ SUNHOUSE -->
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-title">VỀ SUNHOUSE</h5>
+            <ul class="footer-list">
+              <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+              <li><a href="#">Cơ cấu tổ chức</a></li>
+              <li><a href="#">Thành tích giải thưởng</a></li>
+              <li><a href="#">SUNHOUSE TV</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột TIN TỨC & SỰ KIỆN -->
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+            <ul class="footer-list">
+              <li><a href="#">Tin hoạt động</a></li>
+              <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+              <li><a href="#">Tin thưởng thức</a></li>
+              <li><a href="#">Khuyến mại HOT</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+            <ul class="footer-list">
+              <li><a href="#">Chính sách bảo hành</a></li>
+              <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+              <li><a href="#">Địa điểm bán hàng</a></li>
+              <li><a href="#">Liên hệ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Thông tin liên hệ -->
+          <div class="col-md-4 mb-3">
+            <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+            <p>
+              Tầng 12, tòa nhà Ruby Tower, Số 35<br />
+              Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+            <p>
+              Văn phòng tập đoàn:<br />
+              024.37396676 / 024.37396666<br />
+              Tổng đài CSKH: 1800 6680
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+            <p>
+              Email: info@sunhouse.com.vn<br />
+              Website: www.sunhouse.com.vn
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery chuyển slide khi click ảnh nhỏ -->
+    <script>
+      $(document).ready(function () {
+        $(".thumb-img").on("click", function () {
+          var index = $(this).data("index");
+          $("#productCarousel").carousel(index);
+
+          // Highlight ảnh đang chọn
+          $(".thumb-img").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        // Tự cập nhật ảnh nhỏ active khi kéo carousel
+        $("#productCarousel").on("slid.bs.carousel", function (e) {
+          $(".thumb-img").removeClass("active");
+          $('.thumb-img[data-index="' + e.to + '"]').addClass("active");
+        });
+      });
+      $(document).ready(function () {
+        $("#scrollRight").click(function () {
+          $("#related-products").animate({ scrollLeft: "+=220" }, 400);
+        });
+        $("#scrollLeft").click(function () {
+          $("#related-products").animate({ scrollLeft: "-=220" }, 400);
+        });
+      });
+    </script>
+  </body>
+</html>

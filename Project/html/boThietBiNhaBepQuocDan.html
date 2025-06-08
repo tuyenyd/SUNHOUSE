@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết bị nhà bếp quốc dân</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/chung.css">
+
+    <style>
+      :root {
+  --primary-color: #2c5aa0;
+  --secondary-color: #17a2b8;
+  --accent-color: #28a745;
+  --text-dark: #333;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 5px solid var(--primary-color);
+}
+
+.hero-title {
+  color: #2c96a0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  text-align: justify;
+  color: var(--text-dark);
+}
+
+/* Video Section */
+.video-section {
+  position: sticky;
+  top: 20px;
+}
+
+.video-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 20px;
+}
+
+.video-container img {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-play {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: var(--primary-color);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-play:hover {
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.video-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+/* Filters Section */
+.filters-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.filter-title {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 1.1rem;
+}
+
+/* Products Section */
+.products-header {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.new-products-badge {
+  text-align: center;
+}
+
+.new-products-badge .badge {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Product Cards */
+.product-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  /* background: #f8f9fa; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* transition: transform 0.3s ease; */
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(44, 90, 160, 0.8); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-info {
+  background: white;
+}
+
+.product-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  height: 2.4em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+}
+
+.product-price .price-current {
+  font-size: 1.2rem;
+}
+
+.product-price .price-old {
+  font-size: 0.9rem;
+}
+
+/* View Options */
+.view-options .btn {
+  border-color: var(--border-color);
+}
+
+.view-options .btn.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+/* Pagination */
+.pagination .page-link {
+  color: var(--primary-color);
+  border-color: var(--border-color);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.pagination .page-link:hover {
+  color: white;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Breadcrumb */
+.breadcrumb-item a {
+  color: var(--primary-color);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-muted);
+}
+
+/* Expanded Content Styles */
+.expanded-content {
+  background: rgba(44, 90, 160, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 3px solid var(--primary-color);
+  margin: 1rem 0;
+  animation: slideDown 0.5s ease-out;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.feature-list strong {
+  color: var(--primary-color);
+}
+
+/* Animation for content expansion */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.expanded-content.hiding {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Button transition */
+#toggleContentBtn {
+  transition: all 0.3s ease;
+}
+
+#toggleContentBtn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  /* box-shadow: 0 5px 15px #0398a8; */
+}
+
+#btnIcon {
+  transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .expanded-content {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .feature-list li {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-section {
+    padding: 1.5rem;
+  }
+
+  .video-container {
+    margin-top: 2rem;
+  }
+
+  .btn-play {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .filters-section {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .product-card {
+    margin-bottom: 1rem;
+  }
+
+  .products-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .view-options {
+    align-self: flex-start;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.product-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.product-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.product-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.product-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.product-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.product-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Service Features Section */
+.service-feature {
+  background-color: white;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.icon-bg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.service-title {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.service-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Footer Subscribe Section */
+.social-media-container,
+.youtube-container {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-media-container:hover,
+.youtube-container:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.youtube-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-form .input-group {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.newsletter-form .form-control {
+  border: none;
+  padding: 12px 20px;
+  background-color: white;
+}
+
+.newsletter-form .form-control:focus {
+  box-shadow: none;
+}
+
+.newsletter-form .btn {
+  border-radius: 0 50px 50px 0;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.newsletter-form .btn:hover {
+  background-color: #224b85;
+  border-color: #224b85;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #224b85;
+  transform: translateY(-3px);
+}
+
+/* Add these styles to the existing style section */
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+    background-color: #0d7182 !important;
+    border-color: #0d7182 !important;
+    color: white !important;
+}
+
+.service-feature .btn:hover {
+    background-color: #0d7182 !important;
+    border-color: #0d7182 !important;
+    color: white !important;
+}
+
+#toggleContentBtn:hover {
+    background-color: #0d7182 !important;
+    border-color: #0d7182 !important;
+    color: white !important;
+}
+
+    </style>
+
+   <script>
+    // Đảm bảo DOM đã load hoàn toàn
+document.addEventListener("DOMContentLoaded", () => {
+  // Backup jQuery ready function
+  if (typeof $ !== "undefined") {
+    $(document).ready(initializeApp)
+  } else {
+    // Fallback nếu jQuery chưa load
+    setTimeout(initializeApp, 100)
+  }
+})
+
+function initializeApp() {
+  console.log("App initialized") // Debug log
+
+  // View toggle functionality
+  $(document).on("click", "#gridView, #listView", function () {
+    console.log("View toggle clicked") // Debug log
+    $("#gridView, #listView").removeClass("active")
+    $(this).addClass("active")
+
+    if ($(this).attr("id") === "listView") {
+      // Switch to list view
+      $("#productsGrid").removeClass("row").addClass("list-view")
+      $("#productsGrid .col-md-6, #productsGrid .col-lg-4").removeClass("col-md-6 col-lg-4").addClass("col-12")
+      $(".product-card").addClass("list-card")
+    } else {
+      // Switch to grid view
+      $("#productsGrid").removeClass("list-view").addClass("row")
+      $("#productsGrid .col-12").removeClass("col-12").addClass("col-md-6 col-lg-4")
+      $(".product-card").removeClass("list-card")
+    }
+  })
+
+  // Filter functionality
+  $(document).on("change", ".form-check-input", () => {
+    filterProducts()
+  })
+
+  // Product hover effects
+  $(document).on("mouseenter", ".product-card", function () {
+    $(this).find(".product-image img").addClass("hovered")
+  })
+
+  $(document).on("mouseleave", ".product-card", function () {
+    $(this).find(".product-image img").removeClass("hovered")
+  })
+
+  // Toggle expanded content functionality - SỬA LẠI PHẦN NÀY
+  $(document).on("click", "#toggleContentBtn", (e) => {
+    e.preventDefault()
+    console.log("Toggle button clicked") // Debug log
+
+    const expandedContent = $("#expandedContent")
+    const btnText = $("#btnText")
+    const btnIcon = $("#btnIcon")
+
+    console.log("Expanded content visible:", expandedContent.is(":visible")) // Debug log
+
+    if (expandedContent.is(":visible")) {
+      // Hide content
+      expandedContent.slideUp(500, () => {
+        console.log("Content hidden") // Debug log
+      })
+
+      btnText.text("Xem thêm")
+      btnIcon.removeClass("rotated fa-chevron-up").addClass("fa-chevron-right")
+
+      // Scroll to top of hero section
+      $("html, body").animate(
+        {
+          scrollTop: $(".hero-section").offset().top - 100,
+        },
+        500,
+      )
+    } else {
+      // Show content
+      expandedContent.slideDown(500, () => {
+        console.log("Content shown") // Debug log
+      })
+
+      btnText.text("Thu gọn")
+      btnIcon.removeClass("fa-chevron-right").addClass("fa-chevron-up rotated")
+
+      // Scroll to expanded content after animation
+      setTimeout(() => {
+        $("html, body").animate(
+          {
+            scrollTop: expandedContent.offset().top - 150,
+          },
+          500,
+        )
+      }, 300)
+    }
+  })
+
+  // Video modal functionality
+  $("#videoModal").on("show.bs.modal", () => {
+    console.log("Video modal opened")
+  })
+
+  $("#videoModal").on("hide.bs.modal", function () {
+    $(this).find("iframe").attr("src", $(this).find("iframe").attr("src"))
+  })
+
+  // Product quick view
+  $(document).on("click", ".product-overlay .btn", function (e) {
+    e.preventDefault()
+    const productName = $(this).closest(".product-card").find(".product-name").text()
+    alert("Xem chi tiết: " + productName)
+  })
+
+  // Back to top button functionality
+  const backToTopButton = $('<div class="back-to-top"><i class="fas fa-chevron-up"></i></div>')
+  $("body").append(backToTopButton)
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+      backToTopButton.addClass("visible")
+    } else {
+      backToTopButton.removeClass("visible")
+    }
+  })
+
+  $(document).on("click", ".back-to-top", () => {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      800,
+    )
+    return false
+  })
+
+  // Newsletter form submission
+  $(document).on("click", ".newsletter-form .btn", () => {
+    const email = $(".newsletter-form input").val()
+    if (email && /^\S+@\S+\.\S+$/.test(email)) {
+      showNotification("Cảm ơn bạn đã đăng ký nhận tin!", "success")
+      $(".newsletter-form input").val("")
+    } else {
+      showNotification("Vui lòng nhập email hợp lệ", "warning")
+    }
+  })
+
+  // Service feature hover effects
+  $(document).on("mouseenter", ".service-feature", function () {
+    $(this).find(".icon-bg").css("transform", "scale(1.1)")
+  })
+
+  $(document).on("mouseleave", ".service-feature", function () {
+    $(this).find(".icon-bg").css("transform", "scale(1)")
+  })
+
+  // Initialize tooltips and popovers
+  if (typeof bootstrap !== "undefined") {
+    $('[data-bs-toggle="tooltip"]').each(function () {
+      new bootstrap.Tooltip(this)
+    })
+
+    $('[data-bs-toggle="popover"]').each(function () {
+      new bootstrap.Popover(this)
+    })
+  }
+
+  console.log("All event handlers attached") // Debug log
+}
+
+// Filter products based on selected filters
+function filterProducts() {
+  const selectedRatings = []
+  $(".form-check-input:checked").each(function () {
+    const rating = $(this).attr("id").replace("rating", "")
+    selectedRatings.push(Number.parseInt(rating))
+  })
+
+  $(".product-card").each(function () {
+    const productRating = $(this).find(".stars").text().length
+
+    if (selectedRatings.length === 0 || selectedRatings.includes(productRating)) {
+      $(this).parent().show()
+    } else {
+      $(this).parent().hide()
+    }
+  })
+
+  // Update product count
+  const visibleProducts = $(".product-card:visible").length
+  $(".products-header h4 .text-muted").text(`(${visibleProducts} sản phẩm)`)
+}
+
+// Show notification
+function showNotification(message, type = "info") {
+  const notification = $(`
+        <div class="alert alert-${type} alert-dismissible fade show position-fixed" 
+             style="top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    `)
+
+  $("body").append(notification)
+
+  setTimeout(() => {
+    notification.alert("close")
+  }, 3000)
+}
+
+// Additional utility functions
+function formatPrice(price) {
+  return new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  }).format(price)
+}
+
+function generateStars(rating) {
+  let stars = ""
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars += "★"
+    } else {
+      stars += "☆"
+    }
+  }
+  return stars
+}
+
+// Export functions for external use
+window.SunhouseProductPage = {
+  filterProducts: filterProducts,
+  formatPrice: formatPrice,
+  generateStars: generateStars,
+}
+
+   </script>
+
+</head>
+<body>
+<!-- Header -->
+<header class="sunhouse-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <nav class="main-nav">
+                <div class="dropdown">
+                     <a href="home.html"><img src="https://sunhouse.com.vn/pic/banner/logo.png" style="height: 60px;" alt="Sunhouse Logo"></a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="active">GIỚI THIỆU</a>
+                    <div class="dropdown-menu">
+                        <a href="gioithieu1.html">Về tập đoàn SUNHOUSE</a>
+                        <a href="gioithieu2.html">Thông điệp của Chủ tịch HĐQT</a>
+                        <a href="gioithieu3.html">Cơ cấu tổ chức</a>
+                        <a href="gioithieu4.html">Thành tích giải thưởng</a>
+                        <a href="gioithieu5.html">SUNHOUSE TV</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown products-dropdown">
+                    <a href="#">SẢN PHẨM</a>
+                    <div class="dropdown-menu">
+                        <div class="menu-columns">
+                            <div class="menu-column">
+                                <h4>DANH MỤC SẢN PHẨM</h4>
+                                <a href="#">Đồ gia dụng</a>
+                                <a href="#">Điện gia dụng</a>
+                                <a href="dienTuDienLanh.html">Điện tử Điện lạnh</a>
+                                <a href="thiBiNhaBep.html">Thiết bị nhà bếp</a>
+                                <a href="doDungNhaBep.html">Đồ dùng nhà bếp</a>
+                                <a href="#">Tủ nhựa</a>
+                                <a href="#">Thiết bị âm thanh</a>
+                                <a href="#">Điện dân dụng</a>
+                                <a href="#">Thiết bị điện công nghiệp</a>
+                                <a href="#">Dây cáp điện</a>
+                            </div>
+                            
+                            <div class="menu-column">
+                                <h4>NỔI BẬT</h4>
+                                <a href="#">Dòng sản phẩm cao cấp Ultra Titanium</a>
+                                <a href="#">Bộ nồi Anod</a>
+                                <a href="#">Chảo inox</a>
+                                <a href="#">Bộ nồi inox</a>
+                                <a href="#">Chảo chống dính</a>
+                                <a href="#">Nồi nhôm</a>
+                                <a href="#" class="view-all">Xem tất cả danh mục <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+                <a href="#">XUẤT KHẨU</a>
+                <a href="#">BẢO HÀNH</a>               
+            </nav>
+        </div>
+        <div class="logo" style="font-size: 30px;">SUNHOUSE</div>
+        <div class="header-actions">
+            
+            <a href="#" class="action-link"><i class="fas fa-search"></i> TÌM KIẾM</a>
+            <a href="#" class="action-link"><i class="fas fa-industry"></i> NHÀ MÁY</a>
+            <a href="#" class="action-link"><i class="fas fa-store"></i> ĐẠI LÝ</a>
+            <a href="#" class="action-link"><i class="fas fa-globe"></i> TIẾNG VIỆT</a>
+             <div class="dropdown">
+                <a href="#" class="action-link"><i class="fas fa-user"></i> TÀI KHOẢN</a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="dangnhap.html"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                    <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+ <!-- Breadcrumb -->
+    <div class="container-fluid bg-light py-2">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Điện tử điện lạnh</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Điều hòa không khí</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Left Column - Content -->
+            <div class="col-lg-6">
+                <!-- Hero Section -->
+                <div class="hero-section mb-5">
+                    <h1 class="hero-title text-uppercase fw-bold mb-4">
+                      Câu chuyện sản phẩm
+                    </h1>
+                    <div class="hero-content">
+                        <p class="lead mb-4">
+                            Thiết bị nhà bếp cao cấp là một trong những nhóm sản phẩm chủ lực do SUNHOUSE sản xuất, nhập khẩu và phân phối. Các sản phẩm như: bếp gas âm, bếp gas dương, bếp đôi điện từ, bếp hồng ngoại, máy hút mùi… luôn dẫn đầu thị trường về công nghệ hiện đại với độ bền, độ an toàn cao theo tiêu chuẩn quản lý nghiêm ngặt của các chuyên gia Hàn Quốc. Nhờ thế, thiết bị nhà bếp mang thương hiệu SUNHOUSE luôn đáp ứng hoàn hảo mọi yêu cầu khó tính từ người tiêu dùng.
+                        </p>
+                        
+                        <!-- Expanded content - initially hidden -->
+                        <div id="expandedContent" class="expanded-content" style="display: none;">
+                            <p class="mb-4">
+                              Rất nhiều trang thiết bị nhà bếp mang thương hiệu SUNHOUSE đã và đang là bạn đồng hành cùng hàng triệu gia đình Việt bởi phần chất bền, hình thức đẹp, công nghệ hiện đại, tính năng dễ sử dụng và giá thành hợp lý. Cho đến nay, SUNHOUSE là một trong số ít những thương hiệu Việt được người tiêu dùng tin cậy và yên tâm sử dụng; phá vỡ định kiến hàng Việt thì kém chất lượng hơn hàng ngoại.
+                            </p>
+                            <p class="mb-3">
+                              Điểm cộng lớn của SUNHOUSE là toàn bộ công nghệ, dây chuyền kĩ thuật dùng để sản xuất sản phẩm và linh kiện đều được vận hành theo tiêu chuẩn Hàn Quốc. Bên cạnh đó, SUNHOUSE không ngừng cập nhật, đi trước đón đầu các công nghệ mới của thế giới vào quá trình sản xuất nhằm tạo ra nguồn hàng phong phú và vượt trội, cả về số lượng lẫn chất lượng.
+                            </p>
+                            <p>
+                                Tiêu chí hàng đầu SUNHOUSE hướng tới cho các sản phẩm thiết bị nhà bếp chính là An toàn cho người sử dụng. Chúng tôi có các loại bếp với mặt kính chịu lực chịu nhiệt cao cấp; cảm ứng nhiệt/gas ngắt tự động; chế độ tự động ngắt khi quá tải điện năng… Ngoài ra, SUNHOUSE có chế độ bảo hành tốt lên tới 36 tháng với các dòng bếp từ, bếp hồng ngoại…và thông thường là 12 tháng với các dòng sản phẩm phổ biến như ấm nước, quạt, nồi cơm điện… Đây chính là cam kết chất lượng của hãng đối với các dòng sản phẩm thiết bị chính hãng, đem lại giải pháp toàn diện tối ưu cho mọi gia đình.
+                            </p>
+                            <p>
+                                Liên tiếp nhiều năm, SUNHOUSE vinh dự nhận được những giải thưởng danh giá như “Tin & Dùng Việt Nam”, “Hàng Việt Nam chất lượng cao” hay “Thương hiệu mạnh Việt Nam”… Điều này là minh chứng rõ ràng cho sự tin tưởng của khách hàng với thương hiệu SUNHOUSE, cũng là nguồn động viên để SUNHOUSE không ngừng cải tiến công nghệ, nâng cao chất lượng sản phẩm.
+                            </p>
+                            <p>
+                              Quý khách có thể tham khảo tất cả các nhóm hàng thiết bị nhà bếp của SUNHOUSE và mua hàng ngay tại đây
+                            </p>
+                        </div>
+                        
+                        <button class="btn btn-outline-primary btn-lg" id="toggleContentBtn">
+                            <span id="btnText">Xem thêm</span> <i class="fas fa-chevron-right ms-2" id="btnIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="video-section">
+                    <div class="video-container position-relative">
+                      <img src="https://img.youtube.com/vi/weX0ZUZDR-8/maxresdefault.jpg" data-src="https://img.youtube.com/vi/weX0ZUZDR-8/maxresdefault.jpg" alt="ĐIỀU HÒA SUNHOUSE | HẬU MÃI HÀNG ĐẦU" class="img-fluid rounded">
+                        <div class="video-overlay">
+                            <button class="btn-play" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        <!-- Products Section -->
+        <div class="row mt-5">
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3">
+                <div class="filters-section">
+                    <h5 class="fw-bold mb-3">Bộ lọc</h5>
+                    
+                    <!-- Price Filter -->
+                    <div class="filter-group mb-4">
+                        <h6 class="filter-title">Mức độ đánh giá</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rating5">
+                            <label class="form-check-label" for="rating5">
+                                <span class="stars">★★★★★</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rating4">
+                            <label class="form-check-label" for="rating4">
+                                <span class="stars">★★★★☆</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rating3">
+                            <label class="form-check-label" for="rating3">
+                                <span class="stars">★★★☆☆</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rating3">
+                            <label class="form-check-label" for="rating3">
+                                <span class="stars">★★☆☆☆</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rating3">
+                            <label class="form-check-label" for="rating3">
+                                <span class="stars">★☆☆☆☆</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <!-- Products Grid -->
+            <div class="col-lg-9">
+                <div class="products-header d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1">Bộ Thiết bị nhà bếp quốc dân <span class="text-muted">(2 sản phẩm)</span></h4>
+                        <div class="d-flex align-items-center text-muted">
+                            <i class="fas fa-eye me-2"></i>
+                            <span>10,529 lượt xem</span>
+                            <span class="ms-3">Tìm trong Bộ thiết bị nhà bếp quốc dân</span>
+                        </div>
+                    </div>
+                    <div class="view-options">
+                        <button class="btn btn-sm btn-outline-secondary active me-2" id="gridView">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" id="listView">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- New Products Badge -->
+                <div class="new-products-badge mb-4 text-start" >
+                    <span class="badge  text-dark fs-6 px-3 py-2" style="border: solid 1px black; ">SẢN PHẨM MỚI</span>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="row" id="productsGrid">
+                    <!-- Product 1 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="SPdieuhoa.html" class="text-decoration-none">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="../image/thietBiNhaBep/bep1.png" alt="điều hòa" class="img-fluid">
+                                    <div class="product-overlay">
+                                    </div>
+                                </div>
+                                <div class="product-info p-3">
+                                    <h6 class="product-name text-dark">BỘ TBNB QUỐC DÂN BẾP & HÚT MÙI SHB-CB.QD02-BH</h6>
+                                    <div class="product-code text-muted">Mã: SHB-CB.QD02-BH</div>
+                                    <div class="product-rating mb-2">
+                                        <span class="stars text-warning">★★★★★</span>
+                                        <span class="text-muted ms-2">(500 đánh giá)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="SPdieuhoa.html" class="text-decoration-none">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="../image/thietBiNhaBep/bep1.png" alt="điều hòa" class="img-fluid">
+                                    <div class="product-overlay">
+                                    </div>
+                                </div>
+                                <div class="product-info p-3">
+                                    <h6 class="product-name text-dark">BỘ TBNB QUỐC DÂN BẾP & HÚT MÙI SHB-CB.QD02-BH</h6>
+                                    <div class="product-code text-muted">Mã: SHB-CB.QD02-BH</div>
+                                    <div class="product-rating mb-2">
+                                        <span class="stars text-warning">★★★★★</span>
+                                        <span class="text-muted ms-2">(500 đánh giá)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Hướng dẫn lắp đặt tủ nhựa 2 cánh</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video hướng dẫn" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Features Section -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Service Feature 1 -->
+                <div class="col-md-4">
+                    <div class="service-feature text-center p-4">
+                        <div class="service-icon mb-3">
+                            <div class="icon-bg bg-danger text-white">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                        </div>
+                        <h4 class="service-title mb-3">Trợ giúp 24/7</h4>
+                        <p class="service-desc mb-3">Đội ngũ hỗ trợ SUNHOUSE luôn sẵn sàng</p>
+                        <a href="#" class="btn btn-outline-secondary rounded-pill px-4">
+                            Xem thêm <i class="fas fa-chevron-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Feature 2 -->
+                <div class="col-md-4">
+                    <div class="service-feature text-center p-4">
+                        <div class="service-icon mb-3">
+                            <div class="icon-bg bg-danger text-white">
+                                <i class="fas fa-store"></i>
+                            </div>
+                        </div>
+                        <h4 class="service-title mb-3">Điểm bán sản phẩm</h4>
+                        <p class="service-desc mb-3">Hệ thống đại lý trải khắp từ Bắc tới Nam và luôn còn hàng cho bạn mua sắm</p>
+                        <a href="#" class="btn btn-outline-secondary rounded-pill px-4">
+                            Xem thêm <i class="fas fa-chevron-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Feature 3 -->
+                <div class="col-md-4">
+                    <div class="service-feature text-center p-4">
+                        <div class="service-icon mb-3">
+                            <div class="icon-bg bg-danger text-white">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                        </div>
+                        <h4 class="service-title mb-3">Trung tâm bảo hành</h4>
+                        <p class="service-desc mb-3">Hơn 300 trung tâm Bảo hành trên toàn quốc</p>
+                        <a href="#" class="btn btn-outline-secondary rounded-pill px-4">
+                            Xem thêm <i class="fas fa-chevron-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="footer-section">
+      <div class="container">
+        <div class="row text-center d-flex">
+          <div class="col-md-4 footer-box">
+            <h6>Like và theo dõi SUNHOUSE</h6>
+            <p>
+              <a href="#" class="btn btn-outline-dark btn-sm mt-2"
+                ><i class="bi bi-facebook"></i> Theo dõi Trang</a
+              >
+            </p>
+          </div>
+          <div class="col-md-4 footer-box">
+            <h6>Cùng SUNHOUSE xem sản phẩm</h6>
+            <a href="#" class="btn btn-danger"
+              ><i class="bi bi-youtube"></i> SUNHOUSE TV: 186k subscribe</a
+            >
+          </div>
+          <div class="col-md-4 footer-box">
+            <h6>Đăng ký nhận thông tin</h6>
+            <form class="email-input-group d-flex">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Nhập email của bạn"
+              />
+              <button type="submit" class="btn btn-primary ms-2">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Đặt script jQuery trước Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Thêm script debug để kiểm tra -->
+    <script>
+    console.log('jQuery loaded:', typeof $ !== 'undefined');
+    console.log('Bootstrap loaded:', typeof bootstrap !== 'undefined');
+    </script>
+<!-- Footer -->
+<footer class="footer pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <!-- Cột SẢN PHẨM -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">SẢN PHẨM</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Máy lọc nước</a></li>
+                    <li><a href="#">Đồ gia dụng</a></li>
+                    <li><a href="#">Điện gia dụng</a></li>
+                    <li><a href="#">Thiết bị nhà bếp</a></li>
+                    <li><a href="#">Điện tử Điện lạnh</a></li>
+                    <li><a href="#">Điện dân dụng</a></li>
+                    <li><a href="#">Thiết bị điện công nghiệp</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột VỀ SUNHOUSE -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">VỀ SUNHOUSE</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Thông điệp của Chủ tịch HĐQT</a></li>
+                    <li><a href="#">Cơ cấu tổ chức</a></li>
+                    <li><a href="#">Thành tích giải thưởng</a></li>
+                    <li><a href="#">SUNHOUSE TV</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột TIN TỨC & SỰ KIỆN -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">TIN TỨC & SỰ KIỆN</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Tin hoạt động</a></li>
+                    <li><a href="#">Bí quyết - Mẹo vặt</a></li>
+                    <li><a href="#">Tin thưởng thức</a></li>
+                    <li><a href="#">Khuyến mại HOT</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột HỖ TRỢ KHÁCH HÀNG -->
+            <div class="col-md-3 mb-4">
+                <h5 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Xác thực sản phẩm chính hãng</a></li>
+                    <li><a href="#">Địa điểm bán hàng</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Thông tin liên hệ -->
+            <div class="col-md-4 mb-3">
+                <h6 class="footer-subtitle">ĐỊA CHỈ</h6>
+                <p>Tầng 12, tòa nhà Ruby Tower, Số 35<br>
+                Mạc Thái Tổ, Yên Hòa, Cầu Giấy, Hà Nội</p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <h6 class="footer-subtitle">ĐIỆN THOẠI</h6>
+                <p>Văn phòng tập đoàn:<br>
+                024.37396676 / 024.37396666<br>
+                Tổng đài CSKH: 1800 6680</p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <h6 class="footer-subtitle">EMAIL & WEBSITE</h6>
+                <p>Email: info@sunhouse.com.vn<br>
+                Website: www.sunhouse.com.vn</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
